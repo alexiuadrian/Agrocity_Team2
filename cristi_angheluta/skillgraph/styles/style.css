@@ -1,0 +1,26 @@
+#container-skills{
+    border: 1px solid black;
+    width: 350px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+  }
+  .skill-bar {
+    height: 4px;
+    background-color: #21e787;
+    border-radius: 10px;
+    width: 0px;
+    box-shadow: 0 0 10px 1px #21e787b3;
+  }
+  .row {
+    margin-left: 30px;
+  }
+  
+  .inactive-skill-bar {
+    border-radius: 10px;
+    width: 290px;
+    height: 4px;
+    background-color: #0f754c;
+    border: 1px solid rgba(0,0,0,0.3)
+  }
+  
