@@ -1,6 +1,14 @@
-.clip_path {
-    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+.title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
 }
+
+.description {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+
+}
+
 
 .test {
     background-color: green;
@@ -8,28 +16,20 @@
     height: 3rem;
 }
 
-body {
-    background: url("../img/ss.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
 
-/* 
 .card {
     background-color: rgba(255, 255, 255, .15);
     backdrop-filter: blur(15px);
-} */
+}
 
 video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    z-index: -1;
     -webkit-filter: blur(6px);
     filter: blur(6px)
 }
