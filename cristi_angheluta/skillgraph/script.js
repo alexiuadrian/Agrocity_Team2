@@ -1,7 +1,7 @@
 
 // object with our skills
 const techSkills = {
-  "week1": {
+  "Week 1": {
     "cristi" : {
       "HTML" : 7,
       "CSS" : 8,
@@ -48,7 +48,7 @@ const techSkills = {
       "VueJS": 2
     }
   },
-  week2: {
+  "Week 2": {
     "cristi": null,
     "adi":  {
       "HTML" : 10,
@@ -63,7 +63,7 @@ const techSkills = {
     "alexandra": null,
     "adelina": null
   },
-  week3: {
+  "Week 3": {
     "cristi": null,
     "adi":  {
       "HTML" : 2,
@@ -79,7 +79,7 @@ const techSkills = {
     "adelina": null
   },
   
-  week4: {
+  "Week 4": {
     "cristi": null,
     "adi": null,
     "vlad": null,
@@ -87,7 +87,7 @@ const techSkills = {
     "adelina": null
   },
   
-  week5: {
+  "Week 5": {
     "cristi": null,
     "adi": null,
     "vlad": null,
@@ -95,7 +95,7 @@ const techSkills = {
     "adelina": null
   },
   
-  week6: {
+  "Week 6": {
     "cristi": null,
     "adi": null,
     "vlad": null,
@@ -103,7 +103,7 @@ const techSkills = {
     "adelina": null
   },
   
-  week7: {
+  "Week 7": {
     "cristi": null,
     "adi": null,
     "vlad": null,
@@ -111,7 +111,7 @@ const techSkills = {
     "adelina": null
   },
   
-  week8: {
+  "Week 8": {
     "cristi": null,
     "adi": null,
     "vlad": null,
@@ -119,7 +119,7 @@ const techSkills = {
     "adelina": null
   },
   
-  week9: {
+  "Week 9": {
     "cristi": null,
     "adi": null,
     "vlad": null,
@@ -127,7 +127,7 @@ const techSkills = {
     "adelina": null
   },
   
-  week10: {
+  "Week 10": {
     "cristi": null,
     "adi": null,
     "vlad": null,
@@ -135,7 +135,7 @@ const techSkills = {
     "adelina": null
   },
   
-  week11: {
+  "Week 11": {
     "cristi": null,
     "adi": null,
     "vlad": null,
@@ -143,7 +143,7 @@ const techSkills = {
     "adelina": null
   },
   
-  week12: {
+  "Week 12": {
     "cristi": null,
     "adi": null,
     "vlad": null,
@@ -151,7 +151,7 @@ const techSkills = {
     "adelina": null
   },
   
-  week13: {
+  "Week 13": {
     "cristi": null,
     "adi": null,
     "vlad": null,
@@ -159,7 +159,7 @@ const techSkills = {
     "adelina": null
   },
   
-  week14: {
+  "Week 14": {
     "cristi": null,
     "adi": null,
     "vlad": null,
@@ -167,13 +167,171 @@ const techSkills = {
     "adelina": null
   },
   
-  week15: {
+  "Week 15": {
     "cristi": null,
     "adi": null,
     "vlad": null,
     "alexandra": null,
     "adelina": null
-  },
+  }
+}
+const softSkills = {
+  "Week 1": {
+    "cristi" : {
+      "Comunicare" : 2,
+      "Teamwork" : 3,
+      "Creativitate" : 4,
+      "Organizare" : 6,
+      "Problem solving" : 7,
+      "Flexibilitate" : 3,
+      "Responsabilitate": 9
+    },
+    "adi" : {
+      "Comunicare" : 7,
+      "Teamwork" : 8,
+      "Creativitate" : 8,
+      "Organizare" : 7,
+      "Problem solving" : 7,
+      "Flexibilitate" : 6,
+      "Responsabilitate": 5
+    },
+    "vlad" : {
+      "Comunicare" : 7,
+      "Teamwork" : 8,
+      "Creativitate" : 8,
+      "Organizare" : 7,
+      "Problem solving" : 7,
+      "Flexibilitate" : 6,
+      "Responsabilitate": 5
+    },
+    "alexandra" : {
+      "Comunicare" : 2,
+      "Teamwork" : 3,
+      "Creativitate" : 4,
+      "Organizare" : 6,
+      "Problem solving" : 7,
+      "Flexibilitate" : 3,
+      "Responsabilitate": 9
+    },
+    "adelina" : {
+      "Comunicare" : 7,
+      "Teamwork" : 8,
+      "Creativitate" : 8,
+      "Organizare" : 7,
+      "Problem solving" : 7,
+      "Flexibilitate" : 6,
+      "Responsabilitate": 5
+    },
+    "Week 2": {
+      "cristi": null,
+      "adi": null,
+      "vlad": null,
+      "alexandra": null,
+      "adelina": null
+    },
+    "Week 3": {
+      "cristi": null,
+      "adi": null,
+      "vlad": null,
+      "alexandra": null,
+      "adelina": null
+    },
+    "Week 4": {
+      "cristi": null,
+      "adi": null,
+      "vlad": null,
+      "alexandra": null,
+      "adelina": null
+    },
+    
+    "Week 5": {
+      "cristi": null,
+      "adi": null,
+      "vlad": null,
+      "alexandra": null,
+      "adelina": null
+    },
+    
+    "Week 6": {
+      "cristi": null,
+      "adi": null,
+      "vlad": null,
+      "alexandra": null,
+      "adelina": null
+    },
+    
+    "Week 7": {
+      "cristi": null,
+      "adi": null,
+      "vlad": null,
+      "alexandra": null,
+      "adelina": null
+    },
+    
+    "Week 8": {
+      "cristi": null,
+      "adi": null,
+      "vlad": null,
+      "alexandra": null,
+      "adelina": null
+    },
+    
+    "Week 9": {
+      "cristi": null,
+      "adi": null,
+      "vlad": null,
+      "alexandra": null,
+      "adelina": null
+    },
+    
+    "Week 10": {
+      "cristi": null,
+      "adi": null,
+      "vlad": null,
+      "alexandra": null,
+      "adelina": null
+    },
+    
+    "Week 11": {
+      "cristi": null,
+      "adi": null,
+      "vlad": null,
+      "alexandra": null,
+      "adelina": null
+    },
+    
+    "Week 12": {
+      "cristi": null,
+      "adi": null,
+      "vlad": null,
+      "alexandra": null,
+      "adelina": null
+    },
+    
+    "Week 13": {
+      "cristi": null,
+      "adi": null,
+      "vlad": null,
+      "alexandra": null,
+      "adelina": null
+    },
+    
+    "Week 14": {
+      "cristi": null,
+      "adi": null,
+      "vlad": null,
+      "alexandra": null,
+      "adelina": null
+    },
+    
+    "Week 15": {
+      "cristi": null,
+      "adi": null,
+      "vlad": null,
+      "alexandra": null,
+      "adelina": null
+    }
+  }
 }
 
 
@@ -300,6 +458,7 @@ function createWeeklyGraph(val, name) {
     column.style.margin ="1vw"
     column.style.borderRadius ="2px"
     column.style.boxShadow = "1px 1px 10px #666"
+    column.style.display = "flex";
     column.style.height = "1px"; //if it is null, the column have 1 px height
     // style for column
 

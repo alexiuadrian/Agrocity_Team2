@@ -52,6 +52,8 @@
 .column-label {
   display: none;
   position: relative;
+  min-width: 50px;
+  left: -10px;
   top: -40px;
 }
 #container-percents {
