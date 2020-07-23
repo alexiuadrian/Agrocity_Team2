@@ -31,3 +31,34 @@
   background-color: #0f754c;
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
+#container-weekly-graph {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#weekly-graph {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#bar-chart {
+  display: flex;
+  min-height: 330px;
+  flex-direction: row;
+  align-items: flex-end;
+  border-left: 1px solid black;
+}
+.column-label {
+  display: none;
+  position: relative;
+  top: -40px;
+}
+#container-percents {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px;
+  text-align: right;
+  margin-right: 10px;
+}

@@ -18,5 +18,20 @@
         createGraph(techSkills.week1.adi);
     </script>
     
+    
+    <div id="container-weekly-graph">
+        <div>
+            <button id="HTML" onclick="createWeeklyGraph('HTML', 'adi')">HTML</button>
+            <button onclick="createWeeklyGraph('CSS', 'adi')">CSS</button>
+            <button onclick="createWeeklyGraph('Tailwind', 'adi')">Tailwind</button>
+            <button onclick="createWeeklyGraph('JavaScript', 'adi')">JavaScript</button>
+            <button onclick="createWeeklyGraph('PHP', 'adi')">PHP</button>
+            <button onclick="createWeeklyGraph('Laravel', 'adi')">Laravel</button>
+            <button onclick="createWeeklyGraph('VueJS', 'adi')">VueJS</button>
+        </div>
+        <div id="weekly-graph"></div>
+        <script>document.getElementById("HTML").click();</script>
+    </div>
+    
 </body>
 </html>
