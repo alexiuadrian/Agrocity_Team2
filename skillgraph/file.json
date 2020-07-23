@@ -1,0 +1,58 @@
+{
+    "week1": {
+      "andrei" : {
+        "HTML" : 8,
+        "CSS" : 7,
+        "JavaScript" : 7,
+        "Tailwind" : 6,
+        "PHP" : 2,
+        "Laravel" : 1,
+        "VueJS": 1
+  },
+    "cristi" : {
+        "HTML" : 7,
+        "CSS" : 8,
+        "JavaScript" : 8,
+        "Tailwind" : 7,
+        "PHP" : 7,
+        "Laravel" : 6,
+        "VueJS": 5
+  },
+    "adi" : {
+        "HTML" : 7,
+        "CSS" : 7,
+        "JavaScript" : 4,
+        "Tailwind" : 3,
+        "PHP" : 9,
+        "Laravel" : 1,
+        "VueJS": 2
+  },
+    "vlad" : {
+        "HTML" : 7,
+        "CSS" : 6,
+        "JavaScript" : 5,
+        "Tailwind" : 6,
+        "PHP" : 7,
+        "Laravel" : 3,
+        "VueJS": 5
+  },
+    "alexandra" : {
+        "HTML" : 7,
+        "CSS" : 6,
+        "JavaScript" : 4,
+        "Tailwind" : 5,
+        "PHP" : 7,
+        "Laravel" : 5,
+          "VueJS": 6
+  },
+    "adelina" : {
+        "HTML" : 10,
+        "CSS" : 8,
+        "JavaScript" : 7,
+        "Tailwind" : 7,
+        "PHP" : 3,
+        "Laravel" : 2,
+        "VueJS": 2
+      }
+    }
+}
