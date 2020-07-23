@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .title {
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
@@ -8,14 +12,6 @@
     font-weight: 400;
 
 }
-
-
-.test {
-    background-color: green;
-    width: 6rem;
-    height: 3rem;
-}
-
 
 .card {
     background-color: rgba(255, 255, 255, .15);
@@ -32,4 +28,55 @@ video {
     z-index: -1;
     -webkit-filter: blur(6px);
     filter: blur(6px)
+}
+
+.mouse-down {
+    width: 15px;
+    height: 30px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 20px;
+
+}
+
+.bullet {
+    width: 3px;
+    height: 3px;
+    background: rgb(255, 255, 255);
+    margin: auto auto;
+    border-radius: 8px;
+    position: relative;
+
+    -webkit-animation: scrollDownUp 3s infinite;
+    /* Chrome, Safari, Opera */
+    animation: scrollDownUp 3s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes scrollDownUp {
+    0% {
+        top: 5px;
+    }
+
+    50% {
+        top: 20px;
+    }
+
+    100% {
+        top: 5px;
+    }
+}
+
+/* Standard syntax */
+@keyframes scrollDownUp {
+    0% {
+        top: 5px;
+    }
+
+    50% {
+        top: 20px;
+    }
+
+    100% {
+        top: 5px;
+    }
 }
