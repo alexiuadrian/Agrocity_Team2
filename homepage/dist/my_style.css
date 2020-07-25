@@ -1,16 +1,24 @@
 html {
     scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 .title {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 800;
+    font-weight: 900;
 }
 
 .description {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
+}
 
+
+.header__one {
+    font-weight: 900;
+}
+
+.header__two {
+    font-weight: 100;
 }
 
 .card {
@@ -78,5 +86,16 @@ video {
 
     100% {
         top: 5px;
+    }
+}
+
+
+.mobile-menu-visible {
+    display: block;
+}
+
+@media only screen and (max-width:649px) {
+    #scroll__animation {
+        display: none;
     }
 }
