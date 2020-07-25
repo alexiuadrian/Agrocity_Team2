@@ -334,6 +334,7 @@ const softSkills = {
   },
 };
 
+
 function createGraph(data, label) {
   let keys = Object.keys(data);
   let target = document.getElementById("container-graph");
@@ -394,7 +395,8 @@ function createGraph(data, label) {
     //create an active SkillBar
     let skillBar = document.createElement("div");
     skillBar.className =
-      "relative bg-green-500 rounded-sm h-full cursor-pointer";
+      "relative bg-green-500 rounded-sm h-full cursor-pointer allSkillBars";
+    skillBar.style.width = "2px";
 
     //create a skillBar label
     let skillBarLabel = document.createElement("div");
@@ -410,19 +412,30 @@ function createGraph(data, label) {
       skillBarLabel.style.display = "none"; //now you don t see it
     };
 
+    //aici am schimbat
+    let dataVal = data[`${key}`];
     inactiveBar.appendChild(skillBar);
-    animateGraph(skillBar, data[`${key}`]);
+    skillBar.dataset.value = `${dataVal}`;
+
     //call animateGraph to animate active skillBar
   }
 }
+
 //animate function
-function animateGraph(elem, rating) {
-  elem.animate([{ width: "0px" }, { width: `${rating * 10}` + "%" }], {
-    duration: 1500,
-  });
-  //animate width
-  elem.style.width = `${rating * 10}%`;
-  //set width after executing the animation
+
+//aici am schimbat
+function animateGraph() {
+  let allBars = document.getElementsByClassName("allSkillBars");
+  for (const key of allBars) {
+    let dataVal = key.dataset.value;
+    key.animate([{ width: "0px" }, { width: `${dataVal * 10}` + "%" }], {
+      duration: 1500,
+    });
+    //animate width
+    key.style.width = `${dataVal * 10}%`;
+    //set width after executing the animation
+  }
+  document.onscroll = null;
 }
 
 function createWeeklyGraph(name, val) {
@@ -509,3 +522,4 @@ function animateWeeklyGraph(elem, rating) {
   elem.style.height = `${rating * 10}%`;
   //after animation is finished, set the height because it will go again to 1 px
 }
+
