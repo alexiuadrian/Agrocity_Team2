@@ -41,7 +41,7 @@ const techSkills = {
       HTML: 5,
       CSS: 5,
       JavaScript: 5,
-      Tailwind: 0,
+      Tailwind: 5,
       PHP: 0,
       Laravel: 0,
       VueJS: 0,

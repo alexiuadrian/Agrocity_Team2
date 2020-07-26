@@ -55,7 +55,7 @@
 
             <div class="flex justify-between items-center">
                 <a href="">
-                    <img class="h-20 p-3" src="img/nan.png">
+                    <img class="h-20 p-3" src="img/NsN.png">
                 </a>
                 <i id="mobile-hamburger-button" class="fas fa-bars text-green-500 text-3xl"></i>
             </div>
@@ -151,10 +151,11 @@
                     <a class="w-10 flex-shrink-0" href="https://www.instagram.com/16bit.hero/?hl=en" target="_blank">
                         <i class="fab fa-instagram-square text-orange-500" style="font-size:35px;"></i>
                     </a>
-                    <a class="w-10 flex-shrink-0" target="https://twitter.com/AdelinaLipsa">
+                    <a class="w-10 flex-shrink-0" href="https://twitter.com/AdelinaLipsa" target="_blank">
                         <i class="fab fa-twitter-square text-orange-500" style="font-size:35px;"></i>
                     </a>
-                    <a class="w-10 flex-shrink-0" target="https://www.linkedin.com/in/adelina-lip%C8%99a/">
+                    <a class="w-10 flex-shrink-0" href="https://www.linkedin.com/in/adelina-lip%C8%99a/"
+                        target="_blank">
                         <i class="fab fa-linkedin text-orange-500" style="font-size:35px;"></i>
                     </a>
                     <a class="w-10 flex-shrink-0" href="https://github.com/AdelinaLipsa" target="_blank">
@@ -178,6 +179,7 @@
             <script>
                 createGraph(techSkills["Week 1"].adelina, "Hard skills");
                 createGraph(softSkills["Week 1"].adelina, "Soft skills");
+
                 let element = document.getElementById("container-graph")
                 let position = element.getBoundingClientRect().top - 165;
                 document.onscroll = function trigger() {
@@ -236,44 +238,61 @@
             </div>
 
             <div class="container mx-auto px-4 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-20">
-                <div
-                    class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <img class="block h-auto w-full border-b" src="./img/bucharest.png" alt="Alexandra Cismariu">
-                    <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Bucharest rainbow
+                <a href="https://adelinalipsa.github.io/proiect-final/agrocity_project/index.html">
+                    <div
+                        class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <img class="block h-auto w-full border-b" src="./img/bucharest.png" alt="Alexandra Cismariu">
+                        <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Bucharest
+                            rainbow
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div
-                    class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <img class="block h-auto w-full border-b" src="./img/weather.png" alt="weather app screenshot">
-                    <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Weather app</div>
-                </div>
-
-                <div
-                    class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <img class="block h-auto w-full border-b" src="./img/applestore.png" alt="Apple Store">
-                    <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Apple Store</div>
-                </div>
-
-                <div
-                    class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <img class="block h-auto w-full border-b" src="./img/design.png" alt="Travel agency">
-                    <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Travel agency
+                <a href="https://weatherappnow.herokuapp.com/">
+                    <div
+                        class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <img class="block h-auto w-full border-b" src="./img/weather.png" alt="weather app screenshot">
+                        <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Weather app
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div
-                    class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <img class="block h-auto w-full border-b" src="./img/pixel.png" alt="Pixel Art Maker">
-                    <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Pixel Art Maker
+                <a href="https://adelinalipsa.github.io/proiect-final/apple_store/pages/index.html">
+                    <div
+                        class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <img class="block h-auto w-full border-b" src="./img/applestore.png" alt="Apple Store">
+                        <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Apple Store
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div
-                    class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <img class="block h-auto w-full border-b" src="./img/friends.png" alt="Friends Quiz">
-                    <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Friends Quiz</div>
-                </div>
+                <a href="https://adelinalipsa.github.io/proiect-final/clouds_webpage/index.html">
+                    <div
+                        class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <img class="block h-auto w-full border-b" src="./img/design.png" alt="Travel agency">
+                        <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Travel agency
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://adelinalipsa.github.io/pixel_art_maker/index.html">
+                    <div
+                        class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <img class="block h-auto w-full border-b" src="./img/pixel.png" alt="Pixel Art Maker">
+                        <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Pixel Art
+                            Maker
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://adelinalipsa.github.io/proiect-final/friends_quiz/index.html">
+                    <div
+                        class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <img class="block h-auto w-full border-b" src="./img/friends.png" alt="Friends Quiz">
+                        <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Friends Quiz
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
 
