@@ -18,7 +18,7 @@ html {
 }
 
 .header__two {
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .card {
@@ -92,10 +92,4 @@ video {
 
 .mobile-menu-visible {
     display: block;
-}
-
-@media only screen and (max-width:649px) {
-    #scroll__animation {
-        display: none;
-    }
 }
