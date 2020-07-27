@@ -58,7 +58,7 @@
         <div class="container mx-auto md:hidden px-2">
 
             <div class="flex justify-between items-center">
-                <a href="">
+                <a href="../homepage/index.html" target="_blank">
                     <img class="h-20 p-3" src="img/nan.png">
                 </a>
                 <i id="mobile-hamburger-button" class="fas fa-bars text-green-500 text-3xl"></i>
@@ -86,7 +86,7 @@
         </div>
 
         <div class="container mx-auto px-10 flex justify-between items-center hidden md:flex">
-            <a href="">
+            <a href="../homepage/index.html" target="_blank">
                 <img class="h-20 p-3" src="img/nan.png">
             </a>
             <ul class="flex justify-between w-2/3 text-base font-semibold text-green-400 tracking-wide">
@@ -176,57 +176,84 @@
             </div>
 
             <div id="container-graph" class="flex flex-col lg:flex-row justify-between mt-10"></div>
-                <script>
-                    createGraph(techSkills["Week 1"].alexandra, "Hard skills");
-                    createGraph(softSkills["Week 1"].alexandra, "Soft skills");
-                    let element = document.getElementById("container-graph");
-                    let position = element.getBoundingClientRect().top - 165;
-                    document.onscroll = function trigger() {
-                        if (window.scrollY >= position) {
-                            animateGraph();
-                        }
-                    }
-                </script>
+            <script>
+                generateAllGraphs("vlad");
+            </script>
 
             <!-- Weekly Evolution -->
-            <div id="container-weekly-graph"
+            <div id="container-weekly-graph-hard"
                 class="flex flex-col items-center lg:mx-5 border border-gray-300 rounded-md shadow-md overflow-hidden my-5 pb-10 text-center">
-                <h3 class="w-full text-3xl font-bold text-center text-gray-800 py-6 border-b bg-gray-100 mb-10">Hard
-                    skills - Evoluție săptămânală</h3>
-                <div id="buttons__section" class="mx-6">
-                    <button id="HTML"
-                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('alexandra','HTML')">
+                <h3 class="w-full text-3xl font-bold text-center text-gray-800 py-6 border-b bg-gray-100 mb-10">Hard skills -
+                    Evoluție săptămânală</h3>
+                <div id="buttons__section-hard" class="mx-6">
+                    <button id="hard-active-btn"
+                        class="active bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
+                        onclick="createWeeklyGraph('alexandra','HTML', 'hard')">
                         HTML
                     </button>
                     <button
                         class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('alexandra','CSS')">CSS</button>
+                        onclick="createWeeklyGraph('alexandra','CSS', 'hard')">CSS</button>
                     <button
                         class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('alexandra','CSS')">SCSS</button>
+                        onclick="createWeeklyGraph('alexandra','SCSS', 'hard')">SCSS</button>
                     <button
                         class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('alexandra','Tailwind')">Tailwind</button>
+                        onclick="createWeeklyGraph('alexandra','Tailwind', 'hard')">Tailwind</button>
                     <button
                         class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('alexandra','JavaScript')">
+                        onclick="createWeeklyGraph('alexandra','JavaScript', 'hard')">
                         JavaScript
                     </button>
                     <button
                         class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('alexandra','PHP')">PHP</button>
+                        onclick="createWeeklyGraph('alexandra','PHP', 'hard')">PHP</button>
                     <button
                         class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('alexandra','Laravel')">Laravel</button>
+                        onclick="createWeeklyGraph('alexandra','Laravel', 'hard')">Laravel</button>
                     <button
                         class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('alexandra','VueJS')">VueJS</button>
+                        onclick="createWeeklyGraph('alexandra','VueJS', 'hard')">VueJS</button>
                 </div>
-                <div id="weekly-graph" class="flex items-center w-full h-64 mt-16 px-10"></div>
-                <script>
-                    document.getElementById("HTML").click();
-                </script>
+                <div id="weekly-graph-hard" class="flex items-center w-full h-64 mt-16 px-10"></div>
+            </div>
+
+            <!-- Weekly Evolution -->
+            <div id="container-weekly-graph-soft"
+                class="flex flex-col items-center lg:mx-5 border border-gray-300 rounded-md shadow-md overflow-hidden my-5 pb-10 text-center">
+                <h3 class="w-full text-3xl font-bold text-center text-gray-800 py-6 border-b bg-gray-100 mb-10">Soft
+                    skills - Evoluție săptămânală</h3>
+                <div id="buttons__section-soft" class="mx-6">
+                    <button id="soft-active-btn"
+                        class="active bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
+                        onclick="createWeeklyGraph('alexandra','Comunicare', 'soft')">
+                        Comunicare
+                    </button>
+                    <button
+                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
+                        onclick="createWeeklyGraph('alexandra','Teamwork', 'soft')">Teamwork</button>
+                    <button
+                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
+                        onclick="createWeeklyGraph('alexandra','Creativitate', 'soft')">Creativitate</button>
+                    <button
+                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
+                        onclick="createWeeklyGraph('alexandra','Organizare', 'soft')">Organizare</button>
+                    <button
+                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
+                        onclick="createWeeklyGraph('alexandra','Problem solving', 'soft')">
+                        Problem solving
+                    </button>
+                    <button
+                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
+                        onclick="createWeeklyGraph('alexandra','Flexibilitate', 'soft')">Flexibilitate</button>
+                    <button
+                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
+                        onclick="createWeeklyGraph('alexandra','Responsabilitate', 'soft')">Responsabilitate</button>
+                    <button
+                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
+                        onclick="createWeeklyGraph('alexandra','Proactivitate', 'soft')">Proactivitate</button>
+                </div>
+                <div id="weekly-graph-soft" class="flex items-center w-full h-64 mt-16 px-10"></div>
             </div>
         </div>
 
@@ -248,35 +275,38 @@
 
                 <div
                     class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <img class="block h-auto w-full border-b" src="https://picsum.photos/400/350"
+                   <a  href="https://alexandracismariu.github.io/portofoliu/decathlon.html" target="_blank"> 
+                        <img class="block h-auto w-full border-b" src="/alexandra/img/alexandra-portofoliu2.png" alt="Alexandra Cismariu">
+                   </a>
+                    <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Pagină de rezultate</div>
+                </div>
+
+                <div
+                    class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                    <a href="https://alexandracismariu.github.io/portofoliu/emag.html" target="_blank">
+                        <img class="block h-auto w-full border-b" src="/alexandra/img/alexandra-portofoliu3.png" alt="Alexandra Cismariu">
+                    </a>
+                    <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Pagină de rezultate</div>
+                </div>
+
+                <div
+                    class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                    <a href="https://alexandracismariu.github.io/portofoliu/fashion-days.html" target="_blank">
+                        <img class="block h-auto w-full border-b" src="/alexandra/img/alexandra-portofoliu4.png" alt="Alexandra Cismariu">
+                    </a>
+                    <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Pagină de rezultate</div>
+                </div>
+
+                <div
+                    class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                    <img class="block h-auto w-full border-b" src="https://picsum.photos/400/250"
                         alt="Alexandra Cismariu">
                     <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Nume proiect</div>
                 </div>
 
                 <div
                     class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <img class="block h-auto w-full border-b" src="https://picsum.photos/400/350"
-                        alt="Alexandra Cismariu">
-                    <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Nume proiect</div>
-                </div>
-
-                <div
-                    class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <img class="block h-auto w-full border-b" src="https://picsum.photos/400/350"
-                        alt="Alexandra Cismariu">
-                    <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Nume proiect</div>
-                </div>
-
-                <div
-                    class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <img class="block h-auto w-full border-b" src="https://picsum.photos/400/350"
-                        alt="Alexandra Cismariu">
-                    <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Nume proiect</div>
-                </div>
-
-                <div
-                    class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <img class="block h-auto w-full border-b" src="https://picsum.photos/400/350"
+                    <img class="block h-auto w-full border-b" src="https://picsum.photos/400/250"
                         alt="Alexandra Cismariu">
                     <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Nume proiect</div>
                 </div>
@@ -308,12 +338,16 @@
     </div>
 
     <script>
-        function toggleMenu() {
-            document.querySelector("#mobile-menu").classList.toggle("mobile-menu-visible");
-        }
+        // Responsive menu
+            function toggleMenu() {
+                document
+                    .querySelector("#mobile-menu")
+                    .classList.toggle("mobile-menu-visible");
+            }
 
-        document.querySelector("#mobile-hamburger-button").addEventListener("click",
-            toggleMenu);
+            document
+                .querySelector("#mobile-hamburger-button")
+                .addEventListener("click", toggleMenu);
     </script>
 </body>
 
