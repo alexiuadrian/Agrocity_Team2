@@ -15,6 +15,10 @@
     <script src="script.js"></script>
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         @media(min-width: 768px) and (max-width: 1024px) {
             .avatar {
                 min-height: 500px;
@@ -61,7 +65,7 @@
             </div>
 
             <div id="mobile-menu" class="flex justify-end text-right px-5 hidden">
-                <ul class="flex-col text-base font-semibold text-green-500 tracking-wide">
+                <ul class="flex-col text-base font-semibold text-green-600 tracking-wide">
                     <li class="font-bold">
                         <a href="#home">Acasă</a>
                     </li>
@@ -85,20 +89,20 @@
             <a href="">
                 <img class="h-20 p-3" src="img/nan.png">
             </a>
-            <ul class="flex justify-between w-2/3 text-base font-semibold text-green-300 tracking-wide">
-                <li class="text-green-400 hover:text-green-500 font-bold">
+            <ul class="flex justify-between w-2/3 text-base font-semibold text-green-400 tracking-wide">
+                <li class="text-green-400 hover:text-green-600 font-bold">
                     <a href="#home">Acasă</a>
                 </li>
-                <li class="hover:text-green-500">
+                <li class="hover:text-green-600">
                     <a href="#about-me">Despre mine</a>
                 </li>
-                <li class="hover:text-green-500">
+                <li class="hover:text-green-600">
                     <a href="#skills">Aptitudini</a>
                 </li>
-                <li class="hover:text-green-500">
+                <li class="hover:text-green-600">
                     <a href="#projects">Proiecte</a>
                 </li>
-                <li class="hover:text-green-500">
+                <li class="hover:text-green-600">
                     <a href="#contact">Contact</a>
                 </li>
             </ul>
@@ -145,20 +149,24 @@
 
                 <!-- Social links -->
                 <div class="flex justify-start mt-6">
-                    <a class="w-10 flex-shrink-0" href="https://www.facebook.com/adelina.lipsa1" target="_blank">
+                    <a class="w-10 flex-shrink-0 transform hover:-translate-y-1 hover:scale-110"
+                        href="https://www.facebook.com/adelina.lipsa1" target="_blank">
                         <i class="fab fa-facebook-square text-orange-500" style="font-size:35px;"></i>
                     </a>
-                    <a class="w-10 flex-shrink-0" href="https://www.instagram.com/16bit.hero/?hl=en" target="_blank">
+                    <a class="w-10 flex-shrink-0 transform hover:-translate-y-1 hover:scale-110"
+                        href="https://www.instagram.com/16bit.hero/?hl=en" target="_blank">
                         <i class="fab fa-instagram-square text-orange-500" style="font-size:35px;"></i>
                     </a>
-                    <a class="w-10 flex-shrink-0" href="https://twitter.com/AdelinaLipsa" target="_blank">
+                    <a class="w-10 flex-shrink-0 transform hover:-translate-y-1 hover:scale-110"
+                        href="https://twitter.com/AdelinaLipsa" target="_blank">
                         <i class="fab fa-twitter-square text-orange-500" style="font-size:35px;"></i>
                     </a>
-                    <a class="w-10 flex-shrink-0" href="https://www.linkedin.com/in/adelina-lip%C8%99a/"
-                        target="_blank">
+                    <a class="w-10 flex-shrink-0 transform hover:-translate-y-1 hover:scale-110"
+                        href="https://www.linkedin.com/in/adelina-lip%C8%99a/" target="_blank">
                         <i class="fab fa-linkedin text-orange-500" style="font-size:35px;"></i>
                     </a>
-                    <a class="w-10 flex-shrink-0" href="https://github.com/AdelinaLipsa" target="_blank">
+                    <a class="w-10 flex-shrink-0 transform hover:-translate-y-1 hover:scale-110"
+                        href="https://github.com/AdelinaLipsa" target="_blank">
                         <i class="fab fa-github-square text-orange-500" style="font-size:35px;"></i>
                     </a>
                 </div>
@@ -205,6 +213,11 @@
                     <button
                         class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
                         onclick="createWeeklyGraph('adelina','CSS')">CSS</button>
+                    <button
+                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
+                        onclick="createWeeklyGraph('cristi','SCSS')">
+                        SCSS
+                    </button>
                     <button
                         class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
                         onclick="createWeeklyGraph('adelina','Tailwind')">Tailwind</button>

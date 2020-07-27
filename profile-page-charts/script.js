@@ -45,6 +45,7 @@ const techSkills = {
       PHP: 0,
       Laravel: 0,
       VueJS: 0,
+      SCSS: 2
     },
   },
   "Week 2": {
@@ -68,6 +69,7 @@ const techSkills = {
       PHP: 0,
       Laravel: 0,
       VueJS: 0,
+      SCSS: 3
     },
   },
   "Week 3": {
