@@ -1,3 +1,2 @@
-# Agrocity_Team2
+ [AgroCity - Team 2](https://alexiuadrian.github.io/Agrocity_Team2/homepage/)
 
-Alexandra joined the team!
