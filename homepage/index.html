@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrocity interns</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+    <link href="my_style.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body class="antialiased">
+    <video src="img/Pexels Videos 3653.mp4" autoplay muted loop></video>
+    <div class="card z-10 bg-white xl:h-screen md:h-full lg:h-screen h-full">
+        <header class="border-b bg-white w-full py-1 z-40 shadow-xl">
+            <div class="container mx-auto md:hidden px-2">
+
+                <div class="flex justify-between items-center">
+                    <img class="h-20 p-3" src="img/NaN.png">
+                    <i id="mobile-hamburger-button" class="fas fa-bars text-orange-500 text-3xl"></i>
+                </div>
+
+                <div id="mobile-menu" class="flex justify-end text-right px-5 hidden">
+                    <ul class="flex-col text-base text-orange-500 tracking-wide">
+                        <li class="font-bold">
+                            <a href="#home">Acasă</a>
+                        </li>
+                        <li class="py-2">
+                            <a href="#about-me" onclick="toggleMenu();">Despre mine</a>
+                        </li>
+                        <li class="py-2">
+                            <a href="#skills" onclick="toggleMenu();">Aptitudini</a>
+                        </li>
+                        <li class="py-2">
+                            <a href="#projects" onclick="toggleMenu();">Proiecte</a>
+                        </li>
+                        <li class="py-2">
+                            <a href="#contact" onclick="toggleMenu();">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container mx-auto px-10 flex justify-between items-center hidden md:flex">
+                <a href="index.html">
+                    <img class="h-20 p-3" src="img/NaN.png">
+                </a>
+                <ul class="flex justify-end w-2/3 text-base text-orange-400 tracking-wide">
+                    <li class="text-orange-400 hover:text-orange-600 font-bold mx-2">
+                        <a href="#home">Homepage</a>
+                    </li>
+                    <li class="hover:text-orange-500 font-bold mx-2">
+                        <a href="#projects">Proiecte</a>
+                    </li>
+                    <li class="hover:text-orange-500 font-bold mx-2">
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="mx-auto flex justify-center content-center items-center px-12 mt-16 flex-wrap sm:px-1">
+            <div class="p-2 h-auto sm:w-full xl:w-5/12 lg:w-3/5">
+                <img src="img/agrocity2.png" class="sm:w-full">
+            </div>
+            <div class="p-5 sm:w-auto text-white sm:w-full sm:px-12 my-6 xl:w-5/12 lg:w-2/5 sm:mb-12">
+                <h1 class="text-4xl font-black header__one">Salut!</h1>
+                <div class="text-lg xl:text-2xl py-4 header__two">
+                    Noi suntem echipa NaN(Not a Number) și asta e pagina noastra principală.
+                    <br><br>
+                    Am început împreună acest internship cu multă ambiție și curiozitate, toți fiind de o diversitate și
+                    voință ieșită din comun! Așa ar fi spus un povestitor. Așadar, am decis să ne adunăm super puterile
+                    și să schimbăm lumea cu ajutorul codului nostru.
+                    <br>
+                    <div class="py-6 ">
+                        <button
+                            class="hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-full mr-3 border border-orange-500 ">
+                            <a href="#echipa">Echipa</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pb-5 flex flex-col justify-center items-center absolute bottom-0 left-0 right-0"
+            id="scroll__animation">
+            <h1 class="font-light text-xl text-white">Hai să ne cunoști!</h1>
+            <div class="mouse-down center">
+                <div class="bullet">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container my-12 px-4 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 xl:gap-20 m-auto"
+        id="echipa">
+        <a href="../profile-page-charts/profile-alexandra.html">
+            <div
+                class="card lg:mx-12 my-1 w-full overflow-hidden rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+
+                <img class="block h-auto w-full rounded" src="img/alex.jpg" alt="Alexandra Cismariu">
+
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2 title">Alexandra Cismariu</div>
+                    <p class="text-black text-base description">
+                        "E destul să vrei hotărât un lucru, pentru ca evoluția să se petreacă". <br>-Tudor Arghezi
+                    </p>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+
+                <div class=" px-2 py-4 flex flex-row justify-center">
+                    <!--bottom-0 absolute mx-auto w-full mb-622-->
+                    <span
+                        class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm text-black mr-2">#drumeții</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm text-black mr-2">#natură</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm text-black">#programare</span>
+                </div>
+
+            </div>
+        </a>
+
+
+        <a href="../profile-page-charts/profile-adi.html">
+            <div
+                class="card lg:mx-12 my-1 w-full overflow-hidden rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ">
+                <img class="block h-auto w-full rounded" src="img/adi.jpg" alt="Adi Alexiu">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2 title">Adi Alexiu</div>
+                    <p class="text-black text-base description">
+                        "It's OK to have your eggs in one basket as long as you control what happens to that basket."
+                        <br>- Elon Musk
+                    </p>
+                    <br>
+                    <br>
+                </div>
+
+                <div class=" px-2 py-4 flex flex-row justify-center">
+                    <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm text-black mr-2">#fotbal</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm text-black mr-2">#OS</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm text-black">#programare</span>
+                </div>
+
+            </div>
+        </a>
+
+
+
+        <a href="../profile-page-charts/profile-vlad.html">
+            <div
+                class="card lg:mx-12 my-1 w-full overflow-hidden rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ">
+                <img class="block h-auto w-full rounded" src="img/vlad.jpg" alt="vlad albescu">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2 title">Vlad Albescu</div>
+                    <p class="text-black text-base description">
+                        "Well why don't you turn him in?", and the guy says "I would, but I need the eggs."
+                        <br> - Woody Allen
+                    </p>
+                    <br>
+                    <br>
+                </div>
+
+                <div class=" px-2 py-4 flex flex-row justify-center">
+                    <span
+                        class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm text-black mr-2">#programare</span>
+                    <span
+                        class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm text-black mr-2">#calatorit</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm text-black">#filme</span>
+                </div>
+
+            </div>
+        </a>
+
+
+
+        <a href="../profile-page-charts/profile-cristi.html">
+            <div
+                class="card lg:mx-12 my-1 w-full  overflow-hidden rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ">
+                <img class="block h-auto w-full rounded" src="img/cristian.jpg" alt="cristian angheluta">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2 title">Cristian Angheluta</div>
+                    <p class="text-black text-base description">
+                        “The best time to plant a tree was 20 years ago. The second best time is now.”
+                        <br>– Chinese Proverb
+                        <br>
+                        <br>
+
+                    </p>
+                </div>
+
+                <div class=" px-2 py-4 flex flex-row justify-center">
+                    <span
+                        class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm  text-black mr-2">#natură</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm  text-black mr-2">#ski</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm  text-black">#programare</span>
+                </div>
+
+            </div>
+        </a>
+
+        <a href="../profile-page-charts/profile-adelina.html">
+            <div
+                class="card lg:mx-12 my-1 w-full  overflow-hidden rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ">
+                <img class="block h-auto w-full" src="img/ade.jpg" alt="adelina lipsa">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2 title">Adelina Lipsa</div>
+                    <p class="text-black text-base description">
+                        “One's doing well if age improves even slightly one's capacity to hold on to that vital truism:
+                        "This too shall pass.”
+                        <br>― Alain de Botton </p>
+                </div>
+
+                <div class=" px-2 py-4 flex flex-row justify-center">
+                    <span
+                        class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm text-black mr-2">#fotografie</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm text-black mr-2">#citit</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm text-black">#jocurivideo</span>
+                </div>
+
+            </div>
+        </a>
+    </div>
+    <script>
+        function toggleMenu() {
+            document.querySelector("#mobile-menu").classList.toggle("mobile-menu-visible");
+        }
+
+        document.querySelector("#mobile-hamburger-button").addEventListener("click",
+            toggleMenu);
+    </script>
+</body>
+
+</html>
