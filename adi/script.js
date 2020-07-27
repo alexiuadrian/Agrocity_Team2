@@ -1,5 +1,5 @@
-var techSkills = {};
-var softSkills = {};
+let techSkills = {};
+let softSkills = {};
 
 function createGraph(data, label) {
   let keys = Object.keys(data);
@@ -104,11 +104,17 @@ function animateGraph() {
   document.onscroll = null;
 }
 
-function createWeeklyGraph(name, val) {
+function createWeeklyGraph(name, val, id) {
   //iterate through object keys => array with weeks
-  let keys = Object.keys(techSkills);
+  let data;
+  if (id === "hard") {
+    data = techSkills;
+  } else if (id === "soft") {
+    data = softSkills;
+  }
+  let keys = Object.keys(data);
 
-  let target = document.getElementById("weekly-graph");
+  let target = document.getElementById("weekly-graph-" + id);
   //target container for barchart and percents
 
   let containerPercents = document.createElement("div");
@@ -134,21 +140,21 @@ function createWeeklyGraph(name, val) {
   containerPercents.appendChild(percent0);
   //append elements with text to container
 
-  containerPercents.id = "container-percents";
+  containerPercents.id = "container-percents-" + id;
   // give id to container percents to easily target it
   target.appendChild(containerPercents);
   containerPercents.className =
     "h-full flex flex-col justify-between mr-3 text-right font-semibold text-gray-500";
   //append container percents to barchart and percents container
 
-  if (document.getElementById("bar-chart") !== null) {
-    document.getElementById("bar-chart").remove();
-    document.getElementById("container-percents").remove();
+  if (document.getElementById("bar-chart-" + id) !== null) {
+    document.getElementById("bar-chart-" + id).remove();
+    document.getElementById("container-percents-" + id).remove();
     //reinitialize bar chart, container percents and the label if they are already created
   }
 
   let container = document.createElement("div");
-  container.id = "bar-chart";
+  container.id = "bar-chart-" + id;
   container.className = "w-full flex h-full border-l items-end";
   target.appendChild(container); //create bars container and append to the barchart and percents container
 
@@ -173,9 +179,9 @@ function createWeeklyGraph(name, val) {
     container.appendChild(column); //append column to bar chart container
     column.appendChild(columnLabel); //append tooltip to bar
 
-    if (techSkills[`${key}`][`${name}`] !== null) {
+    if (data[`${key}`][`${name}`] !== null) {
       //if the property of obj["week5"]["adi"] is not null for ex
-      animateWeeklyGraph(column, techSkills[`${key}`][`${name}`][`${val}`]); //animate each column which is not 0
+      animateWeeklyGraph(column, data[`${key}`][`${name}`][`${val}`]); //animate each column which is not 0
     }
   }
 }
@@ -189,31 +195,53 @@ function animateWeeklyGraph(elem, rating) {
   //after animation is finished, set the height because it will go again to 1 px
 }
 
-// functia se apeleaza in HTML
 function generateAllGraphs(name) {
   "user strict";
-      
-  fetch('skills.json')
-  .then(function(resp) {
+
+  fetch("skills.json")
+    .then(function (resp) {
       return resp.json();
-  })
-  .then(function(data) {
+    })
+    .then(function (data) {
       // JSON-ul contine acum ambele tipuri de skill-uri
       techSkills = data["hard"];
-      softSkills = data["soft"]; 
+      softSkills = data["soft"];
 
       // Codul din HTML de generat graficele
-      createGraph(techSkills["Week 1"].adi, "Hard skills");
-      createGraph(softSkills["Week 1"].adi, "Soft skills");
+      createGraph(techSkills["Week 2"][`${name}`], "Hard skills");
+      createGraph(softSkills["Week 2"][`${name}`], "Soft skills");
       let element = document.getElementById("container-graph");
       let position = element.getBoundingClientRect().top - 165;
       document.onscroll = function trigger() {
-          if (window.scrollY >= position) {
-              animateGraph();
-          }
-      }
-      
-      createWeeklyGraph(name,'HTML');
+        if (window.scrollY >= position) {
+          animateGraph();
+        }
+      };
+      createWeeklyGraph(`${name}`, "HTML", "hard");
+      createWeeklyGraph(`${name}`, "Comunicare", "soft");
 
-  });
+      // Make initial active buttons
+      let btnsHardSection = document.getElementById("buttons__section-hard");
+      let btnsSoftSection = document.getElementById("buttons__section-soft");
+
+      let btnsHard = btnsHardSection.getElementsByTagName("button");
+      let btnsSoft = btnsSoftSection.getElementsByTagName("button");
+
+      let btnHardActive = document.getElementById("hard-active-btn");
+      let btnSoftActive = document.getElementById("soft-active-btn");
+
+      for (const btn of btnsHard) {
+        btn.addEventListener("click", () => {
+          btnHardActive.classList.remove("bg-orange-500");
+          btnHardActive.classList.add("bg-green-500");
+        });
+      }
+
+      for (const btn of btnsSoft) {
+        btn.addEventListener("click", () => {
+          btnSoftActive.classList.remove("bg-orange-500");
+          btnSoftActive.classList.add("bg-green-500");
+        });
+      }
+    });
 }
