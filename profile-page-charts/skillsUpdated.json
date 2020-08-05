@@ -1,0 +1,396 @@
+{
+    "soft": {
+        "Week 1": {
+            "cristi": {
+                "Comunicare": 7.75,
+                "Spirit de echipa": 8,
+                "Creativitate": 7.75,
+                "Organizare": 6.5,
+                "Gandire logica": 6.75,
+                "Flexibilitate": 6,
+                "Punctualitate": 7.5,
+                "Proactivitate": 7.25
+            },
+            "adi": {
+                "Comunicare": 8.25,
+                "Spirit de echipa": 8.5,
+                "Creativitate": 6.5,
+                "Organizare": 7.5,
+                "Gandire logica": 7.25,
+                "Flexibilitate": 6.75,
+                "Punctualitate": 7.5,
+                "Proactivitate": 7
+            },
+            "vlad": {
+                "Comunicare": 7.5,
+                "Spirit de echipa": 8,
+                "Creativitate": 7,
+                "Organizare": 6.5,
+                "Gandire logica": 6.5,
+                "Flexibilitate": 6.5,
+                "Punctualitate": 7.25,
+                "Proactivitate": 6.25
+            },
+            "alexandra": {
+                "Comunicare": 8,
+                "Spirit de echipa": 7.5,
+                "Creativitate": 7,
+                "Organizare": 6,
+                "Gandire logica": 6,
+                "Flexibilitate": 7.5,
+                "Punctualitate": 7.75,
+                "Proactivitate": 7
+            },
+            "adelina": {
+                "Comunicare": 8,
+                "Spirit de echipa": 7.75,
+                "Creativitate": 8,
+                "Organizare": 7,
+                "Gandire logica": 6,
+                "Flexibilitate": 6,
+                "Punctualitate": 7,
+                "Proactivitate": 7.5
+            }
+        },
+        "Week 2": {
+            "cristi": {
+                "Comunicare": 8.75,
+                "Spirit de echipa": 9,
+                "Creativitate": 7.75,
+                "Organizare": 7.5,
+                "Gandire logica": 7.75,
+                "Flexibilitate": 7,
+                "Punctualitate": 8.5,
+                "Proactivitate": 8.25
+            },
+            "adi": {
+                "Comunicare": 9.25,
+                "Spirit de echipa": 9.5,
+                "Creativitate": 7.5,
+                "Organizare": 8.5,
+                "Gandire logica": 8.25,
+                "Flexibilitate": 7.75,
+                "Punctualitate": 8.5,
+                "Proactivitate": 8
+            },
+            "vlad": {
+                "Comunicare": 8.5,
+                "Spirit de echipa": 9,
+                "Creativitate": 8,
+                "Organizare": 7.5,
+                "Gandire logica": 7.5,
+                "Flexibilitate": 7.5,
+                "Punctualitate": 8.25,
+                "Proactivitate": 7.25
+            },
+            "alexandra": {
+                "Comunicare": 9,
+                "Spirit de echipa": 8.5,
+                "Creativitate": 8,
+                "Organizare": 7,
+                "Gandire logica": 7,
+                "Flexibilitate": 8.5,
+                "Punctualitate": 8.75,
+                "Proactivitate": 8
+            },
+            "adelina": {
+                "Comunicare": 9,
+                "Spirit de echipa": 8.75,
+                "Creativitate": 9,
+                "Organizare": 8,
+                "Gandire logica": 7,
+                "Flexibilitate": 7,
+                "Punctualitate": 8,
+                "Proactivitate": 8.5
+            }
+        },
+        "Week 3": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 4": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 5": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 6": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 7": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 8": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 9": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 10.3": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 11": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 12": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 13": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 14": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 15": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        }
+    },
+    "hard": {
+        "Week 1": {
+            "cristi": {
+                "HTML": 8,
+                "CSS": 6,
+                "SCSS": 6,
+                "Tailwind": 0.3,
+                "JavaScript": 6,
+                "VueJS": 0.3,
+                "PHP": 0.3,
+                "Laravel": 0.3
+            },
+            "adi": {
+                "HTML": 7,
+                "CSS": 5,
+                "SCSS": 0.3,
+                "Tailwind": 0.3,
+                "JavaScript": 6,
+                "VueJS": 0.3,
+                "PHP": 7,
+                "Laravel": 0.3
+            },
+            "vlad": {
+                "HTML": 8,
+                "CSS": 8,
+                "SCSS": 7.5,
+                "Tailwind": 1,
+                "JavaScript": 6,
+                "VueJS": 0.3,
+                "PHP": 4,
+                "Laravel": 0.3
+            },
+            "alexandra": {
+                "HTML": 5,
+                "CSS": 5,
+                "SCSS": 0.3,
+                "Tailwind": 5,
+                "JavaScript": 2,
+                "VueJS": 0.3,
+                "PHP": 0.3,
+                "Laravel": 0.3
+            },
+            "adelina": {
+                "HTML": 7,
+                "CSS": 7,
+                "SCSS": 2,
+                "Tailwind": 3,
+                "JavaScript": 5,
+                "VueJS": 0.3,
+                "PHP": 0.3,
+                "Laravel": 0.3
+            }
+        },
+        "Week 2": {
+            "cristi": {
+                "HTML": 9,
+                "CSS": 7,
+                "SCSS": 7,
+                "Tailwind": 4,
+                "JavaScript": 7,
+                "VueJS": 0.3,
+                "PHP": 0.3,
+                "Laravel": 0.3
+            },
+            "adi": {
+                "HTML": 8,
+                "CSS": 7,
+                "SCSS": 4,
+                "Tailwind": 3,
+                "JavaScript": 7,
+                "VueJS": 0.3,
+                "PHP": 7,
+                "Laravel": 0.3
+            },
+            "vlad": {
+                "HTML": 9,
+                "CSS": 9,
+                "SCSS": 8,
+                "Tailwind": 8,
+                "JavaScript": 6,
+                "VueJS": 1,
+                "PHP": 4,
+                "Laravel": 1
+            },
+            "alexandra": {
+                "HTML": 6,
+                "CSS": 6,
+                "SCSS": 2,
+                "Tailwind": 5,
+                "JavaScript": 2,
+                "VueJS": 0.3,
+                "PHP": 1,
+                "Laravel": 0.3
+            },
+            "adelina": {
+                "HTML": 8,
+                "CSS": 8,
+                "SCSS": 3,
+                "Tailwind": 5,
+                "JavaScript": 5,
+                "VueJS": 0.3,
+                "PHP": 0.3,
+                "Laravel": 0.3
+            }
+        },
+        "Week 3": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 4": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 5": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 6": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 7": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 8": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 9": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 10.3": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 11": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 12": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 13": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 14": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        },
+        "Week 15": {
+            "cristi": null,
+            "adi": null,
+            "vlad": null,
+            "alexandra": null,
+            "adelina": null
+        }
+    }
+}
