@@ -1,373 +1,493 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="icon" type="image/png" href="img/NaN.png" />
 
     <!-- Tailwind CSS then Fontawesome-->
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
     <title>Vlad Albescu - Profil</title>
-    <script src="script.js">
-    </script>
-
-
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
 
     <style>
-        @media(min-width: 768px) and (max-width: 1024px) {
-            .avatar {
-                min-height: 500px;
-            }
-        }
+      main {
+        width: 100%;
+      }
 
-        @media(max-width: 767px) {
-            .avatar {
-                min-height: 320px;
-            }
+      @media (min-width: 1700px) {
+        main {
+          width: 66.6666%;
         }
+      }
 
-        html {
-            scroll-behavior: smooth;
-        }
+      #about-me {
+        width: 100%;
+        margin: 0;
+        margin-top: 5rem;
+      }
 
-        .mobile-menu-visible {
-            display: block;
+      @media (min-width: 1700px) {
+        #about-me {
+          width: 66.6666%;
+          margin: auto;
+          margin-top: 10rem;
         }
+      }
 
-        .centered-label {
-            left: 50%;
-            top: -2rem;
-            transform: translateX(-50%);
-            min-width: max-content;
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .avatar {
+          min-height: 500px;
         }
+      }
 
-        .right-label {
-            right: -2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            min-width: max-content;
+      @media (max-width: 767px) {
+        .avatar {
+          min-height: 320px;
         }
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .mobile-menu-visible {
+        display: block;
+      }
+
+      .centered-label {
+        left: 50%;
+        top: -2rem;
+        transform: translateX(-50%);
+        min-width: max-content;
+      }
+
+      .right-label {
+        right: -2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        min-width: max-content;
+      }
+
+      #evolution-chart-soft,
+      #evolution-chart-hard,
+      #weekly-chart-soft,
+      #weekly-chart-hard {
+        width: 100%;
+        height: 400px;
+      }
+
+      @media screen and (max-width: 900px) {
+        #evolution-chart-soft,
+        #evolution-chart-hard,
+        #weekly-chart-soft,
+        #weekly-chart-hard {
+          height: 35vh;
+        }
+      }
+
+      .header {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 800;
+      }
+
+      .text-content {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 400;
+      }
+
+      .subheader {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+      }
+      
+
+      .underline{
+        height: 1px;
+        width: 100%;
+        background: #67B26F;
+    /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #4ca2cd, #67B26F);
+    /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #4ca2cd, #67B26F);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+
+      .header_two{
+        font-weight: 300;
+      }
+    
     </style>
+  </head>
 
-</head>
-
-<body class="bg-gray-100">
-
-    <header class="border-b bg-white fixed w-full py-1 z-40 shadow-xl">
-        <div class="container mx-auto md:hidden px-2">
-
-            <div class="flex justify-between items-center">
-                <a href="../homepage/index.html">
-                    <img class="h-20 p-3" src="img/nan.png">
-                </a>
-                <i id="mobile-hamburger-button" class="fas fa-bars text-green-600 text-3xl"></i>
-            </div>
-
-            <div id="mobile-menu" class="flex justify-end text-right px-5 hidden">
-                <ul class="flex-col text-base font-semibold text-green-600 tracking-wide">
-                    <li class="py-2">
-                        <a href="#home">Acasă</a>
-                    </li>
-                    <li class="py-2">
-                        <a href="#about-me" onclick="toggleMenu();">Despre mine</a>
-                    </li>
-                    <li class="py-2">
-                        <a href="#skills" onclick="toggleMenu();">Aptitudini</a>
-                    </li>
-                    <li class="py-2">
-                        <a href="#projects" onclick="toggleMenu();">Proiecte</a>
-                    </li>
-                    <li class="py-2">
-                        <a href="#contact" onclick="toggleMenu();">Contact</a>
-                    </li>
-                </ul>
-            </div>
+  <body class="bg-gray-200">
+    <nav class="border-b bg-white fixed w-full py-1 z-40 top-0">
+      <div class="container mx-auto md:hidden px-2">
+        <div class="flex justify-between items-center">
+          <a href="../homepage/index.html">
+            <img class="h-20 p-3" src="img/NaN.png" />
+          </a>
+          <i id="mobile-hamburger-button" class="fas fa-bars text-gray-500 text-3xl mr-3"></i>
         </div>
-
-        <div class="container mx-auto px-10 flex justify-between items-center hidden md:flex">
-            <a href="../homepage/index.html">
-                <img class="h-20 p-3" src="img/nan.png">
-            </a>
-            <ul class="flex justify-between w-2/3 text-base font-semibold text-green-400 tracking-wide">
-                <li class="hover:text-green-600">
-                    <a href="#home">Acasă</a>
-                </li>
-                <li class="hover:text-green-600">
-                    <a href="#about-me">Despre mine</a>
-                </li>
-                <li class="hover:text-green-600">
-                    <a href="#skills">Aptitudini</a>
-                </li>
-                <li class="hover:text-green-600">
-                    <a href="#projects">Proiecte</a>
-                </li>
-                <li class="hover:text-green-600">
-                    <a href="#contact">Contact</a>
-                </li>
-            </ul>
+      
+        <div id="mobile-menu" class="flex justify-start text-right px-5 hidden">
+          <ul class="flex-col text-sm uppercase font-semibold text-gray-500 tracking-widest text-center">
+            <li class="py-2">
+              <a href="#skills" onclick="toggleMenu();">Aptitudini</a>
+            </li>
+            <li class="py-2">
+              <a href="#projects" onclick="toggleMenu();">Proiecte</a>
+            </li>
+            <li class="py-2">
+              <a href="#contact" onclick="toggleMenu();">Contact</a>
+            </li>
+          </ul>
         </div>
-    </header>
+      </div>
 
-    <div id="home" class="py-16"></div>
-
-    <div class="container mx-auto">
-
-        <!-- About me -->
-        <div id="about-me" class="w-full lg:max-w-full lg:flex shadow-md p-4">
-            <div class="w-full h-auto lg:w-1/3 md:shadow-md bg-cover bg-bottom avatar"
-                style="background-image: url('img/vlad/vlad.jpg');">
-            </div>
-
-            <div
-                class="flex flex-col justify-between lg:w-2/3 border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 rounded-b lg:rounded-b-none lg:rounded-r bg-white p-4">
-                <div class="leading-relaxed md:leading-normal">
-                    <p class="flex items-center text-xs md:text-sm text-gray-600">
-                        <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20">
-                            <path
-                                d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-                        </svg>
-                        Seriozitate
-                    </p>
-                    <h1 class="text-3xl sm:text-5xl text-green-500 font-bold">Vlad Albescu</h1>
-                    <h3 class="text-orange-500 text-md sm:text-xl font-semibold tracking-widest uppercase mb-4">
-                        Programator web junior</h3>
-                </div>
-                <div class="leading-relaxed md:leading-normal class=" text-md text-gray-700 text-base"">
-                    <p>Salut! Sunt Vlad și sunt un web developer în devenire din București. Am terminat Facultatea de
-                        Automatică și Calculatoare de la UPB și de 6 luni mi-am descoperit pasiunea pentru front-end
-                        development. </p><br>
-                    <p>Îmi plac provocările și iubesc momentele în care reușesc să îi dau de cap unei probleme ce
-                        inițial părea imposibilă - cred că asta este cea mai mare satisfacție a unui programator. Pe
-                        lângă web development, sunt pasionat și de design grafic și filme. Mi-aș petrece tot timpul
-                        liber călătorind prin lume.</p>
-                </div>
-
-                <!-- Social links -->
-                <div class="flex justify-start mt-6">
-                    <a class="w-10 flex-shrink-0 transform hover:-translate-y-1 hover:scale-110"
-                        href="https://www.facebook.com/vladalbescu" target="_blank">
-                        <i class="fab fa-facebook-square text-orange-500" style="font-size:35px;"></i>
-                    </a>
-                    <a class="w-10 flex-shrink-0 transform hover:-translate-y-1 hover:scale-110"
-                        href="https://www.instagram.com/vladalbescu" target="_blank">
-                        <i class="fab fa-instagram-square text-orange-500" style="font-size:35px;"></i>
-                    </a>
-                    <!-- <a class="w-10 flex-shrink-0" target="_blank">
-                        <i class="fab fa-twitter-square text-orange-500" style="font-size:35px;"></i>
-                    </a> -->
-                    <a class="w-10 flex-shrink-0 transform hover:-translate-y-1 hover:scale-110"
-                        href="https://ro.linkedin.com/in/vlad-andrei-albescu-69a274195" target="_blank">
-                        <i class="fab fa-linkedin text-orange-500" style="font-size:35px;"></i>
-                    </a>
-                    <a class="w-10 flex-shrink-0 transform hover:-translate-y-1 hover:scale-110"
-                        href="https://github.com/vladalbescu" target="_blank">
-                        <i class="fab fa-github-square text-orange-500" style="font-size:35px;"></i>
-                    </a>
-                </div>
-            </div>
+      <div
+        class="mx-20 flex justify-between items-center hidden md:flex"
+      >
+        <a href="../homepage/index.html">
+          <img class="h-20 p-3" src="img/NaN.png" />
+        </a>
+        <ul
+          class="flex justify-between text-sm uppercase font-semibold text-gray-500 tracking-widest"
+        >
+          <li class="hover:text-gray-600">
+            <a href="#skills">Aptitudini</a>
+          </li>
+          <li class="hover:text-gray-600 ml-20">
+            <a href="#projects">Proiecte</a>
+          </li>
+          <li class="hover:text-gray-600 ml-20">
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- About me -->
+    <div
+      id="about-me"
+      class="flex flex-col xl:flex-row border border-gray-300 xl:rounded bg-white overflow-hidden shadow-md"
+    >
+      <div class="flex flex-col p-5 md:p-20 justify-center">
+        <div class="leading-relaxed md:leading-normal">
+          <h1 class="text-3xl sm:text-5xl text-gray-600 font-bold header">
+            Vlad Albescu
+          </h1>
+          <h3
+            class="text-gray-500 text-base font-semibold tracking-widest uppercase mb-10 -mt-3 subheader"
+          >
+            Full-stack dev intern
+          </h3>
         </div>
-
-        <!-- Skills -->
-        <div id="skills" class="bg-white my-16 py-10 shadow-xl">
-            <div class="flex flex-col lg:flex-row items-center lg:justify-around">
-                <h3
-                    class="text-green-500 text-4xl lg:text-5xl font-bold border-b border-green-200 flex self-center py-4">
-                    Aptitudini
-                </h3>
-                <img class="w-full max-w-md p-4" src="img/skills-img.png">
-            </div>
-
-            <div id="container-graph" class="flex flex-col lg:flex-row justify-between mt-10"></div>
-            <script>
-                generateAllGraphs("vlad");
-            </script>
-
-            <!-- Weekly Evolution -->
-            <div id="container-weekly-graph-hard"
-                class="flex flex-col items-center lg:mx-5 border border-gray-300 rounded-md shadow-md overflow-hidden my-5 pb-10 text-center">
-                <h3 class="w-full text-3xl font-bold text-center text-gray-800 py-6 border-b bg-gray-100 mb-10">Hard
-                    skills -
-                    Evoluție săptămânală</h3>
-                <div id="buttons__section-hard" class="mx-6">
-                    <button id="hard-active-btn"
-                        class="active bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('vlad','HTML', 'hard')">
-                        HTML
-                    </button>
-                    <button
-                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('vlad','CSS', 'hard')">CSS</button>
-                    <button
-                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('vlad','SCSS', 'hard')">SCSS</button>
-                    <button
-                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('vlad','Tailwind', 'hard')">Tailwind</button>
-                    <button
-                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('vlad','JavaScript', 'hard')">
-                        JavaScript
-                    </button>
-                    <button
-                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('vlad','PHP', 'hard')">PHP</button>
-                    <button
-                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('vlad','Laravel', 'hard')">Laravel</button>
-                    <button
-                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('vlad','VueJS', 'hard')">VueJS</button>
-                </div>
-                <div id="weekly-graph-hard" class="flex items-center w-full h-64 mt-16 px-10"></div>
-
-            </div>
-
-            <!-- Weekly Evolution -->
-            <div id="container-weekly-graph-soft"
-                class="flex flex-col items-center lg:mx-5 border border-gray-300 rounded-md shadow-md overflow-hidden my-5 pb-10 text-center">
-                <h3 class="w-full text-3xl font-bold text-center text-gray-800 py-6 border-b bg-gray-100 mb-10">Soft
-                    skills - Evoluție săptămânală</h3>
-                <div id="buttons__section-soft" class="mx-6">
-                    <button id="soft-active-btn"
-                        class="active bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('vlad','Comunicare', 'soft')">
-                        Comunicare
-                    </button>
-                    <button
-                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('vlad','Teamwork', 'soft')">Teamwork</button>
-                    <button
-                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('vlad','Creativitate', 'soft')">Creativitate</button>
-                    <button
-                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('vlad','Organizare', 'soft')">Organizare</button>
-                    <button
-                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('vlad','Problem solving', 'soft')">
-                        Problem solving
-                    </button>
-                    <button
-                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('vlad','Flexibilitate', 'soft')">Flexibilitate</button>
-                    <button
-                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('vlad','Responsabilitate', 'soft')">Responsabilitate</button>
-                    <button
-                        class="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-orange-500 focus:bg-orange-500 focus:outline-none my-1"
-                        onclick="createWeeklyGraph('vlad','Proactivitate', 'soft')">Proactivitate</button>
-                </div>
-                <div id="weekly-graph-soft" class="flex items-center w-full h-64 mt-16 px-10"></div>
-            </div>
+        <div
+          class="leading-relaxed md:leading-normal text-gray-600 text-content text-lg xl:text-xl header_two"
+        >
+          <p>
+            Salut! Sunt Vlad și sunt un web developer în devenire din București.
+            Am terminat Facultatea de Automatică și Calculatoare de la UPB și de
+            6 luni mi-am descoperit pasiunea pentru front-end development.
+          </p>
+          <br />
+          <p>
+            Îmi plac provocările și iubesc momentele în care reușesc să îi dau
+            de cap unei probleme ce inițial părea imposibilă - cred că asta este
+            cea mai mare satisfacție a unui programator. Pe lângă web
+            development, sunt pasionat și de design grafic și filme. Mi-aș
+            petrece tot timpul liber călătorind prin lume.
+          </p>
         </div>
-
-        <!-- Portfolio -->
-        <div id="projects" class="bg-white my-16 py-10 shadow-xl">
-            <div class="text-center mb-10">
-                <h3 class="text-green-500 text-4xl lg:text-5xl font-bold border-b border-green-200 py-4 inline">
-                    Portofoliu</h3>
-            </div>
-
-            <div class="container mx-auto px-4 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-20">
-                <a href="https://vladalbescu.github.io/Tic-Tac-Toe/" target="_blank">
-                    <div
-                        class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                        <img class="block h-auto w-full border-b" src="img/vlad/tic-tac-toe.jpg" alt="Tic-tac-toe">
-                        <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Tic-tac-toe
-                        </div>
-                    </div>
-                </a>
-
-                <a href="https://vladalbescu.github.io/Calculator/" target="_blank">
-                    <div
-                        class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                        <img class="block h-auto w-full border-b" src="img/vlad/calculator.jpg" alt="Calculator">
-                        <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Calculator
-                        </div>
-                    </div>
-                </a>
-
-                <a href="https://vladalbescu.github.io/Librar-e/" target="_blank">
-                    <div
-                        class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                        <img class="block h-auto w-full border-b" src="img/vlad/librar-e.jpg" alt="Librar-e">
-                        <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Virtual
-                            Library</div>
-                    </div>
-                </a>
-
-                <a href="https://vladalbescu.github.io/Rock-Paper-Scissors/" target="_blank">
-                    <div
-                        class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                        <img class="block h-auto w-full border-b" src="img/vlad/rock-paper-scissors.jpg"
-                            alt="Rock, paper, scissors">
-                        <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Rock, paper,
-                            scissors game</div>
-                    </div>
-                </a>
-
-                <a href="https://vladalbescu.github.io/RestaurantPage/" target="_blank">
-                    <div
-                        class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                        <img class="block h-auto w-full border-b" src="img/vlad/restaurantpage.jpg"
-                            alt="Restaurant page">
-                        <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Restaurant
-                            page</div>
-                    </div>
-                </a>
-
-                <a href="https://vladalbescu.github.io/Bucurestiul-in-culori/">
-                    <div
-                        class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                        <img class="block h-auto w-full border-b" src="img/vlad/bucurestiul-in-culori.jpg"
-                            alt="Bucurestiul in culori">
-                        <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Bucureștiul în
-                            culori</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Personal info -->
-        <footer id="contact" class="bg-white my-16 pt-10 shadow-xl relative">
-            <div class="mx-auto max-w-md px-2 text-sm lg:text-normal lg:font-semibold text-gray-700 pl-8 md:pl-24">
-                <div class="flex items-center">
-                    <i class="fas fa-map-marked-alt text-2xl lg:text-4xl text-orange-500 w-1/4 text-center"></i>
-                    <div class="capitalize w-full break-all">Bd. Iuliu Maniu Nr. 17, București</div>
-                </div>
-
-                <div class="flex items-center mt-5">
-                    <i class="fas fa-envelope text-2xl lg:text-4xl text-orange-500  w-1/4 text-center"></i>
-                    <div class="w-full break-all">vlad.agrocity@gmail.com</div>
-                </div>
-
-                <div class="flex items-center mt-5">
-                    <i class="fas fa-phone-volume text-2xl lg:text-4xl text-orange-500 w-1/4 text-center"></i>
-                    <div class="w-full">0737 523 598</div>
-                </div>
-            </div>
-
-            <div class="bg-auto bg-center w-full h-64 -mt-16" style="background-image: url('img/footer.png');">
-            </div>
-        </footer>
+      </div>
+      <img
+        src="./img/vlad/vlad.jpg"
+        alt="Vlad"
+        class="w-auto h-auto object-cover order-first xl:order-none"
+      />
     </div>
 
+    <main class="mx-0 md:mx-5 xl:mx-auto">
+      <!-- Skills -->
+      <div id="skills" class="my-16 xl:py-10">
+        <h3
+          class="mx-5 text-left text-gray-600 text-4xl lg:text-5xl font-bold py-0 header xl:mb-24 border-b border-gray-400"
+        >
+          Aptitudini
+          <!-- <div class="underline"></div> -->
+      </h3>
+        <!-- <img class="w-1/4 max-w-md p-4" src="img/skills-img.png" /> -->
+
+        <div>
+          <!-- Weekly skills -->
+          <div
+            id="container-graph"
+            class="w-full flex flex-wrap flex-col lg:flex-row mt-10 mb-5"
+          >
+            <div
+              class="mx-1 md:mx-5 bg-white lg:mr-3 lg:flex-1 flex-col items-center border border-gray-300 rounded-md overflow-hidden pb-5 text-center mb-5 lg:mb-0"
+            >
+              <h3
+                class="w-full text-3xl font-semibold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5"
+              >
+                Hard skills
+              </h3>
+              <div id="weekly-chart-hard"></div>
+            </div>
+            <div
+              class="mx-1 md:mx-5 bg-white lg:ml-3 lg:flex-1 flex flex-col items-center border border-gray-300 rounded-md overflow-hidden pb-5 text-center"
+            >
+              <h3
+                class="w-full text-3xl font-semibold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5"
+              >
+                Soft skills
+              </h3>
+              <div id="weekly-chart-soft"></div>
+            </div>
+          </div>
+
+          <!-- Hard skills Evolution -->
+          <div>
+            <div
+              class="mx-1 md:mx-5 bg-white flex flex-col items-center border border-gray-300 rounded-md overflow-hidden my-5 pb-10 text-center"
+            >
+              <h3
+                class="w-full text-3xl font-semibold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5"
+              >
+                Hard skills - Evoluție săptămânală
+              </h3>
+              <div
+                id="evolution-chart-hard"
+                data-url="https://docs.google.com/spreadsheets/d/1za2HD8Yy_LJAmd_T-CUsI-uqGjoWLuW22UFnYHrqW4A/gviz/tq?gid=1692927260"
+                class="flex items-center w-full mt-5 px-2 xl:px-10"
+              ></div>
+            </div>
+
+            <!-- Soft skills Evolution -->
+            <div
+              class="mx-1 md:mx-5 bg-white flex flex-col items-center border border-gray-300 rounded-md overflow-hidden my-5 pb-10 text-center"
+            >
+              <h3
+                class="w-full text-3xl font-semibold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5"
+              >
+                Soft skills - Evoluție săptămânală
+              </h3>
+              <div
+                id="evolution-chart-soft"
+                data-url="https://docs.google.com/spreadsheets/d/1za2HD8Yy_LJAmd_T-CUsI-uqGjoWLuW22UFnYHrqW4A/gviz/tq?gid=219144841"
+                class="flex items-center w-full mt-5 px-2 xl:px-10"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio -->
+      <div id="projects" class="my-0 my-16">
+        <div class="text-center mb-10">
+          <h3
+            class="mx-5 text-left text-gray-600 text-4xl lg:text-5xl font-bold py-0 border-b border-gray-400 header xl:mb-24"
+          >
+            Proiecte
+          </h3>
+        </div>
+
+        <div
+          class="mx-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-20"
+        >
+          <a href="https://vladalbescu.github.io/Tic-Tac-Toe/" target="_blank">
+            <div
+              class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 shadow-sm"
+            >
+              <img
+                class="block h-40 w-full object-cover"
+                src="img/vlad/tic-tac-toe.jpg"
+                alt="Tic-tac-toe"
+              />
+              <div
+                class="bg-white text-sm uppercase tracking-widest font-semibold text-center text-gray-500 py-4"
+              >
+                Tic-tac-toe
+              </div>
+            </div>
+          </a>
+
+          <a href="https://vladalbescu.github.io/Calculator/" target="_blank">
+            <div
+              class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 shadow-sm"
+            >
+              <img
+                class="block h-40 w-full object-cover"
+                src="img/vlad/calculator.jpg"
+                alt="Calculator"
+              />
+              <div
+                class="bg-white text-sm uppercase tracking-widest font-semibold text-center text-gray-500 py-4"
+              >
+                Calculator
+              </div>
+            </div>
+          </a>
+
+          <a href="https://vladalbescu.github.io/Librar-e/" target="_blank">
+            <div
+              class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 shadow-sm"
+            >
+              <img
+                class="block h-40 w-full object-cover"
+                src="img/vlad/librar-e.jpg"
+                alt="Librar-e"
+              />
+              <div
+                class="bg-white text-sm uppercase tracking-widest font-semibold text-center text-gray-500  py-4"
+              >
+                Virtual Library
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://vladalbescu.github.io/Rock-Paper-Scissors/"
+            target="_blank"
+          >
+            <div
+              class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 shadow-sm"
+            >
+              <img
+                class="block h-40 w-full object-cover"
+                src="img/vlad/rock-paper-scissors.jpg"
+                alt="Rock, paper, scissors"
+              />
+              <div
+               class="bg-white text-sm uppercase tracking-widest font-semibold text-center text-gray-500  py-4"
+              >
+                Rock, paper, scissors game
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://vladalbescu.github.io/RestaurantPage/"
+            target="_blank"
+          >
+            <div
+              class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 shadow-sm"
+            >
+              <img
+                class="block h-40 w-full object-cover"
+                src="img/vlad/restaurantpage.jpg"
+                alt="Restaurant page"
+              />
+              <div
+                class="bg-white text-sm uppercase tracking-widest font-semibold text-center text-gray-500  py-4"
+              >
+                Restaurant page
+              </div>
+            </div>
+          </a>
+
+          <a href="https://vladalbescu.github.io/Bucurestiul-in-culori/">
+            <div
+              class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 shadow-sm"
+            >
+              <img
+                class="block h-40 w-full object-cover"
+                src="img/vlad/bucurestiul-in-culori.jpg"
+                alt="Bucurestiul in culori"
+              />
+              <div
+                class="bg-white text-sm uppercase tracking-widest font-semibold text-center text-gray-500 title py-4"
+              >
+                Bucureștiul în culori
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Personal info -->
+      <footer id="contact" class="my-16 pt-10 pb-10">
+        <div
+          class="mx-auto max-w-md text-sm lg:text-normal lg:font-semibold text-gray-700"
+        >
+          <!-- Social links -->
+          <div class="flex justify-center mt-6">
+            <a
+              class="w-10 flex-shrink-0 mx-2"
+              href="https://www.facebook.com/vladalbescu"
+              target="_blank"
+            >
+              <i
+                class="fab fa-facebook-square text-gray-600 text-5xl hover:text-gray-700"
+              ></i>
+            </a>
+            <a
+              class="w-10 flex-shrink-0 mx-2"
+              href="https://www.instagram.com/vladalbescu"
+              target="_blank"
+            >
+              <i
+                class="fab fa-instagram-square text-gray-600 text-5xl hover:text-gray-700"
+              ></i>
+            </a>
+            <!-- <a class="w-10 flex-shrink-0" target="_blank">
+                        <i class="fab fa-twitter-square text-orange-400" style="font-size:35px;"></i>
+                    </a> -->
+            <a
+              class="w-10 flex-shrink-0 mx-2"
+              href="https://ro.linkedin.com/in/vlad-andrei-albescu-69a274195"
+              target="_blank"
+            >
+              <i
+                class="fab fa-linkedin text-gray-600 text-5xl hover:text-gray-700"
+              ></i>
+            </a>
+            <a
+              class="w-10 flex-shrink-0 mx-2"
+              href="https://github.com/vladalbescu"
+              target="_blank"
+            >
+              <i
+                class="fab fa-github-square text-gray-600 text-5xl hover:text-gray-700"
+              ></i>
+            </a>
+            <a href="mailto:name@email.com" class="w-10 flex-shrink-0 mx-2">
+              <i
+                class="fas fa-envelope-square text-5xl text-gray-600 hover:text-gray-700"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
     <script>
-        // Responsive menu
-        function toggleMenu() {
-            document
-                .querySelector("#mobile-menu")
-                .classList.toggle("mobile-menu-visible");
-        }
-
+      // Responsive menu
+      function toggleMenu() {
         document
-            .querySelector("#mobile-hamburger-button")
-            .addEventListener("click", toggleMenu);
-    </script>
-</body>
+          .querySelector("#mobile-menu")
+          .classList.toggle("mobile-menu-visible");
+      }
 
+      document
+        .querySelector("#mobile-hamburger-button")
+        .addEventListener("click", toggleMenu);
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
+  </body>
 </html>
