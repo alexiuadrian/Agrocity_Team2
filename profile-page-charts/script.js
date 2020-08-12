@@ -178,11 +178,14 @@ function drawChart() {
       hAxis: {
         title: "Săptămâna",
         titleTextStyle: { italic: false },
+        minValue: 1,
+        maxValue: 15,
       },
       vAxis: {
         title: "Nota",
         titleTextStyle: { italic: false },
-        minValue: 10,
+        minValue: 0,
+        maxValue: 10,
         gridlines: {
           count: 10,
         },
@@ -223,10 +226,13 @@ function drawChart() {
       hAxis: {
         title: "Săptămâna",
         titleTextStyle: { italic: false },
+        minValue: 1,
+        maxValue: 15,
       },
       vAxis: {
         title: "Nota",
-        minValue: 10,
+        minValue: 0,
+        maxValue: 10,
         gridlines: {
           count: 10,
         },

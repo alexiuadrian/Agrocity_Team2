@@ -113,6 +113,23 @@
         font-family: "Open Sans", sans-serif;
         font-weight: 300;
       }
+      
+
+      .underline{
+        height: 1px;
+        width: 100%;
+        background: #67B26F;
+    /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #4ca2cd, #67B26F);
+    /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #4ca2cd, #67B26F);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+
+      .header_two{
+        font-weight: 300;
+      }
+    
     </style>
   </head>
 
@@ -123,16 +140,11 @@
           <a href="../homepage/index.html">
             <img class="h-20 p-3" src="img/NaN.png" />
           </a>
-          <i
-            id="mobile-hamburger-button"
-            class="fas fa-bars text-gray-500 text-3xl mr-3"
-          ></i>
+          <i id="mobile-hamburger-button" class="fas fa-bars text-gray-500 text-3xl mr-3"></i>
         </div>
-
-        <div id="mobile-menu" class="flex justify-end text-right px-5 hidden">
-          <ul
-            class="flex-col text-base font-semibold text-gray-500 tracking-wide text-center"
-          >
+      
+        <div id="mobile-menu" class="flex justify-start text-right px-5 hidden">
+          <ul class="flex-col text-sm uppercase font-semibold text-gray-500 tracking-widest text-center">
             <li class="py-2">
               <a href="#skills" onclick="toggleMenu();">Aptitudini</a>
             </li>
@@ -147,21 +159,21 @@
       </div>
 
       <div
-        class="container mx-auto px-10 flex justify-between items-center hidden md:flex"
+        class="mx-20 flex justify-between items-center hidden md:flex"
       >
         <a href="../homepage/index.html">
           <img class="h-20 p-3" src="img/NaN.png" />
         </a>
         <ul
-          class="flex justify-between w-1/3 text-base font-semibold text-gray-500 tracking-wide"
+          class="flex justify-between text-sm uppercase font-semibold text-gray-500 tracking-widest"
         >
           <li class="hover:text-gray-600">
             <a href="#skills">Aptitudini</a>
           </li>
-          <li class="hover:text-gray-600">
+          <li class="hover:text-gray-600 ml-20">
             <a href="#projects">Proiecte</a>
           </li>
-          <li class="hover:text-gray-600">
+          <li class="hover:text-gray-600 ml-20">
             <a href="#contact">Contact</a>
           </li>
         </ul>
@@ -184,7 +196,7 @@
           </h3>
         </div>
         <div
-          class="leading-relaxed md:leading-normal text-md text-gray-700 text-content"
+          class="leading-relaxed md:leading-normal text-gray-600 text-content text-lg xl:text-xl header_two"
         >
           <p>
             Salut! Sunt Vlad și sunt un web developer în devenire din București.
@@ -212,10 +224,11 @@
       <!-- Skills -->
       <div id="skills" class="my-16 xl:py-10">
         <h3
-          class="mx-5 text-left text-gray-600 text-4xl lg:text-5xl font-bold py-0 border-b border-gray-400 header xl:mb-24"
+          class="mx-5 text-left text-gray-600 text-4xl lg:text-5xl font-bold py-0 header xl:mb-24 border-b border-gray-400"
         >
           Aptitudini
-        </h3>
+          <!-- <div class="underline"></div> -->
+      </h3>
         <!-- <img class="w-1/4 max-w-md p-4" src="img/skills-img.png" /> -->
 
         <div>
@@ -228,7 +241,7 @@
               class="mx-1 md:mx-5 bg-white lg:mr-3 lg:flex-1 flex-col items-center border border-gray-300 rounded-md overflow-hidden pb-5 text-center mb-5 lg:mb-0"
             >
               <h3
-                class="w-full text-3xl font-bold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5 text-content"
+                class="w-full text-3xl font-semibold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5"
               >
                 Hard skills
               </h3>
@@ -238,7 +251,7 @@
               class="mx-1 md:mx-5 bg-white lg:ml-3 lg:flex-1 flex flex-col items-center border border-gray-300 rounded-md overflow-hidden pb-5 text-center"
             >
               <h3
-                class="w-full text-3xl font-bold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5 text-content"
+                class="w-full text-3xl font-semibold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5"
               >
                 Soft skills
               </h3>
@@ -252,7 +265,7 @@
               class="mx-1 md:mx-5 bg-white flex flex-col items-center border border-gray-300 rounded-md overflow-hidden my-5 pb-10 text-center"
             >
               <h3
-                class="w-full text-3xl font-bold text-center text-gray-500 py-6 border-b bg-gray-100 text-content"
+                class="w-full text-3xl font-semibold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5"
               >
                 Hard skills - Evoluție săptămânală
               </h3>
@@ -268,7 +281,7 @@
               class="mx-1 md:mx-5 bg-white flex flex-col items-center border border-gray-300 rounded-md overflow-hidden my-5 pb-10 text-center"
             >
               <h3
-                class="w-full text-3xl font-bold text-center text-gray-500 py-6 border-b bg-gray-100 text-content"
+                class="w-full text-3xl font-semibold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5"
               >
                 Soft skills - Evoluție săptămânală
               </h3>
@@ -283,8 +296,8 @@
       </div>
 
       <!-- Portfolio -->
-      <div id="projects" class="my-0 py-5">
-        <div class="text-center mt-2 mb-10">
+      <div id="projects" class="my-0 my-16">
+        <div class="text-center mb-10">
           <h3
             class="mx-5 text-left text-gray-600 text-4xl lg:text-5xl font-bold py-0 border-b border-gray-400 header xl:mb-24"
           >
@@ -305,7 +318,7 @@
                 alt="Tic-tac-toe"
               />
               <div
-                class="bg-white font-semibold text-lg title text-center text-gray-500 py-2"
+                class="bg-white text-sm uppercase tracking-widest font-semibold text-center text-gray-500 py-4"
               >
                 Tic-tac-toe
               </div>
@@ -322,7 +335,7 @@
                 alt="Calculator"
               />
               <div
-                class="bg-white font-semibold text-lg title text-center text-gray-500 py-2"
+                class="bg-white text-sm uppercase tracking-widest font-semibold text-center text-gray-500 py-4"
               >
                 Calculator
               </div>
@@ -339,7 +352,7 @@
                 alt="Librar-e"
               />
               <div
-                class="bg-white font-semibold text-lg title text-center text-gray-500 py-2"
+                class="bg-white text-sm uppercase tracking-widest font-semibold text-center text-gray-500  py-4"
               >
                 Virtual Library
               </div>
@@ -359,7 +372,7 @@
                 alt="Rock, paper, scissors"
               />
               <div
-                class="bg-white font-semibold text-lg title text-center text-gray-500 py-2"
+               class="bg-white text-sm uppercase tracking-widest font-semibold text-center text-gray-500  py-4"
               >
                 Rock, paper, scissors game
               </div>
@@ -379,7 +392,7 @@
                 alt="Restaurant page"
               />
               <div
-                class="bg-white font-semibold text-lg title text-center text-gray-500 py-2"
+                class="bg-white text-sm uppercase tracking-widest font-semibold text-center text-gray-500  py-4"
               >
                 Restaurant page
               </div>
@@ -396,7 +409,7 @@
                 alt="Bucurestiul in culori"
               />
               <div
-                class="bg-white font-semibold text-lg title text-center text-gray-500 py-2"
+                class="bg-white text-sm uppercase tracking-widest font-semibold text-center text-gray-500 title py-4"
               >
                 Bucureștiul în culori
               </div>
@@ -418,7 +431,7 @@
               target="_blank"
             >
               <i
-                class="fab fa-facebook-square text-gray-400 hover:text-gray-600 text-5xl"
+                class="fab fa-facebook-square text-gray-600 text-5xl hover:text-gray-700"
               ></i>
             </a>
             <a
@@ -427,7 +440,7 @@
               target="_blank"
             >
               <i
-                class="fab fa-instagram-square text-gray-400 hover:text-gray-600 text-5xl"
+                class="fab fa-instagram-square text-gray-600 text-5xl hover:text-gray-700"
               ></i>
             </a>
             <!-- <a class="w-10 flex-shrink-0" target="_blank">
@@ -439,7 +452,7 @@
               target="_blank"
             >
               <i
-                class="fab fa-linkedin text-gray-400 hover:text-gray-600 text-5xl"
+                class="fab fa-linkedin text-gray-600 text-5xl hover:text-gray-700"
               ></i>
             </a>
             <a
@@ -448,12 +461,12 @@
               target="_blank"
             >
               <i
-                class="fab fa-github-square text-gray-400 hover:text-gray-600 text-5xl"
+                class="fab fa-github-square text-gray-600 text-5xl hover:text-gray-700"
               ></i>
             </a>
             <a href="mailto:name@email.com" class="w-10 flex-shrink-0 mx-2">
               <i
-                class="fas fa-envelope-square text-5xl text-gray-400 hover:text-gray-600"
+                class="fas fa-envelope-square text-5xl text-gray-600 hover:text-gray-700"
               ></i>
             </a>
           </div>
@@ -474,5 +487,7 @@
         .addEventListener("click", toggleMenu);
     </script>
     <script src="script.js"></script>
+  </body>
+</html>
   </body>
 </html>
