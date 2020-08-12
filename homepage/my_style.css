@@ -113,3 +113,11 @@ body::-webkit-scrollbar-thumb {
     outline: 1px solid slategrey;
     border-radius: 5px;
 }
+
+@media only screen and (max-width:750px) {
+    .logo {
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+    }
+}
