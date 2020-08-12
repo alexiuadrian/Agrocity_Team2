@@ -1,247 +1,286 @@
-let techSkills = {};
-let softSkills = {};
+//         <body>
+//             <div id="weekly-chart-soft"></div>
+//             <div id="weekly-chart-hard"></div>
+//             <div
+//                 id="evolution-chart-soft"
+//                 data-url="https://docs.google.com/spreadsheets/d/1za2HD8Yy_LJAmd_T-CUsI-uqGjoWLuW22UFnYHrqW4A/gviz/tq?gid=1918886040"
+//             ></div>
+//             <div
+//                 id="evolution-chart-hard"
+//                 data-url="https://docs.google.com/spreadsheets/d/1za2HD8Yy_LJAmd_T-CUsI-uqGjoWLuW22UFnYHrqW4A/gviz/tq?gid=809148773"
+//             ></div>
 
-function createGraph(data, label) {
-  let keys = Object.keys(data);
-  let target = document.getElementById("container-graph");
+// apelata fara parametri => saptamana curenta de la inceputul internship-ului
+// apelata cu parametri => calculateWeek(dataInceput, dataSfarsit) --------- dataInceput, dataSfarsit de tip string ---------
+const calculateWeek = (dataInceput = "07/14/2020", dataSfarsit = "nothing") => {
+  // daca functia nu primeste si al doilea parametru, data de sfarsit este data de azi
+  if (dataSfarsit === "nothing") {
+    dataSfarsit = new Date();
+  }
 
-  // create a container for graphic
+  // transforma datele de inceput si sfarsit in milisecunde
+  timeDataInceput = new Date(dataInceput).getTime();
+  timeDataSfarsit = new Date(dataSfarsit).getTime();
 
-  let container = document.createElement("div");
-  let header = document.createElement("h3");
-  header.innerText = label;
-  //add tailwind classes
-  container.classList.add(
-    "lg:w-1/2",
-    "lg:mx-5",
-    "border",
-    "border-gray-300",
-    "rounded-md",
-    "shadow-md",
-    "overflow-hidden",
-    "my-5",
-    "pb-10"
+  let diferenta = timeDataSfarsit - timeDataInceput; // diferenta intre date in milisecunde
+  diferenta /= 1000 * 60 * 60 * 24 * 7; // impartit la (milisecunde * secunde * minute * ore * zile) => nr de milisecunde dintr-o saptamana
+  return Math.abs(Math.round(diferenta)); // transforma in nr intreg si pune in modul
+};
+
+const softUrl = document
+  .getElementById("evolution-chart-soft")
+  .getAttribute("data-url");
+const hardUrl = document
+  .getElementById("evolution-chart-hard")
+  .getAttribute("data-url");
+
+var hardSkillsEvolutionChart,
+  softSkillsEvolutionChart,
+  hardSkillsWeeklyChart,
+  softSkillsWeeklyChart;
+
+// Load the Visualization API and the corechart package.
+google.charts.load("current", { packages: ["corechart"] });
+// Set a callback to run when the Google Visualization API is loaded.
+google.charts.setOnLoadCallback(drawChart);
+
+// Callback that creates and populates a data table,
+function drawChart() {
+  var hardSkillsEvolutionQuery = new google.visualization.Query(hardUrl);
+  var hardSkillsWeeklyQuery = new google.visualization.Query(hardUrl);
+  hardSkillsWeeklyQuery.setQuery(
+    `SELECT A, B, C, D, E, F, G, H, I LIMIT 1 OFFSET ${calculateWeek() - 1}`
   );
-  header.classList.add(
-    "text-3xl",
-    "font-bold",
-    "text-center",
-    "text-gray-800",
-    "py-6",
-    "border-b",
-    "bg-gray-100",
-    "mb-10"
+
+  var softSkillsEvolutionQuery = new google.visualization.Query(softUrl);
+  var softSkillsWeeklyQuery = new google.visualization.Query(softUrl);
+  softSkillsWeeklyQuery.setQuery(
+    `SELECT A, B, C, D, E, F, G, H, I LIMIT 1 OFFSET ${calculateWeek() - 1}`
   );
 
-  target.appendChild(container);
-  container.appendChild(header);
+  hardSkillsEvolutionQuery.send(hardSkillsEvolutionQueryResponse);
+  hardSkillsWeeklyQuery.send(hardSkillsWeeklyQueryResponse);
 
-  for (const key of keys) {
-    //create a row element
-    let row = document.createElement("div");
-    row.className = "text-gray-800 text-base font-bold px-20";
+  softSkillsEvolutionQuery.send(softSkillsEvolutionQueryResponse);
+  softSkillsWeeklyQuery.send(softSkillsWeeklyQueryResponse);
 
-    container.appendChild(row);
-
-    //create a label for our skills
-
-    let p = document.createElement("p");
-
-    let text = document.createTextNode(key);
-
-    p.appendChild(text);
-    row.appendChild(p);
-
-    //create an inactiveBar container for active SkillBar
-
-    let inactiveBar = document.createElement("div");
-    inactiveBar.className = "h-5 bg-gray-400 mb-5";
-    row.appendChild(inactiveBar);
-
-    //create an active SkillBar
-    let skillBar = document.createElement("div");
-    skillBar.className =
-      "relative bg-green-500 rounded-sm h-full cursor-pointer allSkillBars";
-    skillBar.style.width = "2px";
-
-    //create a skillBar label
-    let skillBarLabel = document.createElement("div");
-    skillBarLabel.innerText = data[`${key}`] * 10 + "%";
-    skillBarLabel.className =
-      "right-label z-10 hidden absolute bg-orange-600 px-3 py-1 rounded-md font-semibold text-white text-sm";
-    skillBar.appendChild(skillBarLabel);
-
-    skillBar.onmouseover = () => {
-      skillBarLabel.style.display = "block"; //now you see the tooltip
+  function hardSkillsWeeklyQueryResponse(response) {
+    var data = response.getDataTable();
+    // Set chart options
+    var options = {
+      curveType: "none",
+      bar: {
+        groupWidth: "95%",
+      },
+      vAxis: {
+        baselineColor: "none",
+        ticks: [],
+      },
+      hAxis: {
+        maxValue: 10,
+        minValue: 0,
+        gridlines: {
+          count: 10,
+        },
+        title: "Nota",
+        titleTextStyle: {
+          italic: false,
+        },
+      },
+      legend: {
+        position: "top",
+        maxLines: 3,
+      },
+      pointSize: 3,
+      chartArea: {
+        width: "84%",
+      },
+      colors: [
+        "#fb878a",
+        "#f9c083",
+        "#f7fb95",
+        "#a6fa9a",
+        "#74edff",
+        "#79aaff",
+        "#9d8bff",
+        "#fc9eff",
+      ],
+      fontName: "Open Sans",
     };
-    skillBar.onmouseout = () => {
-      skillBarLabel.style.display = "none"; //now you don t see it
+
+    hardSkillsWeeklyChart = {
+      id: "hard",
+      data: data,
+      options: options,
+    };
+    instantiateBarChart(hardSkillsWeeklyChart);
+  }
+
+  function softSkillsWeeklyQueryResponse(response) {
+    var data;
+    data = response.getDataTable();
+
+    // Set chart options
+    var options = {
+      curveType: "none",
+      bar: {
+        groupWidth: "95%",
+      },
+      vAxis: {
+        baselineColor: "none",
+        ticks: [],
+      },
+      hAxis: {
+        maxValue: 10,
+        minValue: 0,
+        gridlines: {
+          count: 10,
+        },
+        title: "Nota",
+        titleTextStyle: {
+          italic: false,
+        },
+      },
+      legend: {
+        position: "top",
+        maxLines: 3,
+      },
+      pointSize: 3,
+      chartArea: { width: "84%" },
+      colors: [
+        "#fb878a",
+        "#f9c083",
+        "#f7fb95",
+        "#a6fa9a",
+        "#74edff",
+        "#79aaff",
+        "#9d8bff",
+        "#fc9eff",
+      ],
+      fontName: "Open Sans",
     };
 
-    //aici am schimbat
-    let dataVal = data[`${key}`];
-    inactiveBar.appendChild(skillBar);
-    skillBar.dataset.value = `${dataVal}`;
-
-    //call animateGraph to animate active skillBar
-  }
-}
-
-//animate function
-
-//aici am schimbat
-function animateGraph() {
-  let allBars = document.getElementsByClassName("allSkillBars");
-  for (const key of allBars) {
-    let dataVal = key.dataset.value;
-    key.animate([{ width: "0px" }, { width: `${dataVal * 10}` + "%" }], {
-      duration: 1500,
-    });
-    //animate width
-    key.style.width = `${dataVal * 10}%`;
-    //set width after executing the animation
-  }
-  document.onscroll = null;
-}
-
-function createWeeklyGraph(name, val, id) {
-  //iterate through object keys => array with weeks
-  let data;
-  if (id === "hard") {
-    data = techSkills;
-  } else if (id === "soft") {
-    data = softSkills;
-  }
-  let keys = Object.keys(data);
-
-  let target = document.getElementById("weekly-graph-" + id);
-  //target container for barchart and percents
-
-  let containerPercents = document.createElement("div");
-  // container for percents
-
-  let percent100 = document.createElement("p");
-  let percent50 = document.createElement("p");
-  let percent0 = document.createElement("p");
-  // create p elements
-
-  let text100 = document.createTextNode("100%");
-  let text50 = document.createTextNode("50%");
-  let text0 = document.createTextNode("0%");
-  //create text
-
-  percent100.appendChild(text100);
-  percent50.appendChild(text50);
-  percent0.appendChild(text0);
-  //append text to created elements
-
-  containerPercents.appendChild(percent100);
-  containerPercents.appendChild(percent50);
-  containerPercents.appendChild(percent0);
-  //append elements with text to container
-
-  containerPercents.id = "container-percents-" + id;
-  // give id to container percents to easily target it
-  target.appendChild(containerPercents);
-  containerPercents.className =
-    "h-full flex flex-col justify-between mr-3 text-right font-semibold text-gray-500";
-  //append container percents to barchart and percents container
-
-  if (document.getElementById("bar-chart-" + id) !== null) {
-    document.getElementById("bar-chart-" + id).remove();
-    document.getElementById("container-percents-" + id).remove();
-    //reinitialize bar chart, container percents and the label if they are already created
+    softSkillsWeeklyChart = { id: "soft", data: data, options: options };
+    instantiateBarChart(softSkillsWeeklyChart);
   }
 
-  let container = document.createElement("div");
-  container.id = "bar-chart-" + id;
-  container.className = "w-full flex h-full border-l items-end";
-  target.appendChild(container); //create bars container and append to the barchart and percents container
+  function hardSkillsEvolutionQueryResponse(response) {
+    var data = response.getDataTable();
 
-  for (const key of keys) {
-    let column = document.createElement("div");
-    // create bars
+    // Set chart options
+    var options = {
+      curveType: "none",
+      legend: {
+        position: "top",
+        maxLines: 3,
+      },
 
-    column.className =
-      " relative bg-green-500 flex-1 hover:bg-orange-500 cursor-pointer h-2 rounded-sm";
-    column.style.margin = "0 1%";
+      hAxis: {
+        title: "Săptămâna",
+        titleTextStyle: { italic: false },
+        minValue: 1,
+        maxValue: 15,
+      },
+      vAxis: {
+        title: "Nota",
+        titleTextStyle: { italic: false },
+        minValue: 0,
+        maxValue: 10,
+        gridlines: {
+          count: 10,
+        },
+      },
 
-    let columnLabel = document.createElement("p");
-    columnLabel.className =
-      "centered-label hidden z-10 absolute bg-orange-700 px-3 py-1 rounded-md font-semibold text-white text-sm";
-    column.onmouseover = () => {
-      columnLabel.style.display = "block"; //now you see the tooltip
+      pointSize: 5,
+      chartArea: { width: "84%" },
+      colors: [
+        "#fb878a",
+        "#f9c083",
+        "#f7fb95",
+        "#a6fa9a",
+        "#74edff",
+        "#79aaff",
+        "#9d8bff",
+        "#fc9eff",
+      ],
+      fontName: "Open Sans",
     };
-    column.onmouseout = () => {
-      columnLabel.style.display = "none"; //now you don t see it
+
+    hardSkillsEvolutionChart = {
+      id: "hard",
+      data: data,
+      options: options,
     };
-    columnLabel.appendChild(document.createTextNode(key)); //create and append a text defined by key (week1,week2) to a tooltip
-    container.appendChild(column); //append column to bar chart container
-    column.appendChild(columnLabel); //append tooltip to bar
-
-    if (data[`${key}`][`${name}`] !== null) {
-      //if the property of obj["week5"]["adi"] is not null for ex
-      animateWeeklyGraph(column, data[`${key}`][`${name}`][`${val}`]); //animate each column which is not 0
-    }
+    instantiateLineChart(hardSkillsEvolutionChart);
   }
-}
 
-function animateWeeklyGraph(elem, rating) {
-  elem.animate([{ height: "0px" }, { height: `${rating * 10}` + "%" }], {
-    duration: 1000,
+  function softSkillsEvolutionQueryResponse(response) {
+    var data = response.getDataTable();
+    // Set chart options
+    var options = {
+      curveType: "none",
+      legend: {
+        position: "top",
+        maxLines: 3,
+      },
+      hAxis: {
+        title: "Săptămâna",
+        titleTextStyle: { italic: false },
+        minValue: 1,
+        maxValue: 15,
+      },
+      vAxis: {
+        title: "Nota",
+        minValue: 0,
+        maxValue: 10,
+        gridlines: {
+          count: 10,
+        },
+        titleTextStyle: { italic: false },
+      },
+      pointSize: 5,
+      chartArea: { width: "84%" },
+      colors: [
+        "#fb878a",
+        "#f9c083",
+        "#f7fb95",
+        "#a6fa9a",
+        "#74edff",
+        "#79aaff",
+        "#9d8bff",
+        "#fc9eff",
+      ],
+      fontName: "Open Sans",
+    };
+
+    softSkillsEvolutionChart = {
+      id: "soft",
+      data: data,
+      options: options,
+    };
+    instantiateLineChart(softSkillsEvolutionChart);
+  }
+
+  // Instantiate and draw our charts, passing in some options.
+  function instantiateLineChart(chart) {
+    var newChart = new google.visualization.LineChart(
+      document.getElementById(`evolution-chart-${chart.id}`)
+    );
+    newChart.draw(chart.data, chart.options);
+  }
+
+  function instantiateBarChart(chart) {
+    var newChart = new google.visualization.BarChart(
+      document.getElementById(`weekly-chart-${chart.id}`)
+    );
+    newChart.draw(chart.data, chart.options);
+  }
+
+  window.addEventListener("resize", function () {
+    console.log("Resizing!");
+    instantiateLineChart(hardSkillsEvolutionChart);
+    instantiateLineChart(softSkillsEvolutionChart);
+    instantiateBarChart(hardSkillsWeeklyChart);
+    instantiateBarChart(softSkillsWeeklyChart);
   });
-  // animate bar
-  elem.style.height = `${rating * 10}%`;
-  //after animation is finished, set the height because it will go again to 1 px
-}
-
-function generateAllGraphs(name) {
-  "user strict";
-
-  fetch("skills.json")
-    .then(function (resp) {
-      return resp.json();
-    })
-    .then(function (data) {
-      // JSON-ul contine acum ambele tipuri de skill-uri
-      techSkills = data["hard"];
-      softSkills = data["soft"];
-
-      // Codul din HTML de generat graficele
-      createGraph(techSkills["Week 2"][`${name}`], "Hard skills");
-      createGraph(softSkills["Week 2"][`${name}`], "Soft skills");
-      let element = document.getElementById("container-graph");
-      let position = element.getBoundingClientRect().top - 165;
-      document.onscroll = function trigger() {
-        if (window.scrollY >= position) {
-          animateGraph();
-        }
-      };
-      createWeeklyGraph(`${name}`, "HTML", "hard");
-      createWeeklyGraph(`${name}`, "Comunicare", "soft");
-
-      // Make initial active buttons
-      let btnsHardSection = document.getElementById("buttons__section-hard");
-      let btnsSoftSection = document.getElementById("buttons__section-soft");
-
-      let btnsHard = btnsHardSection.getElementsByTagName("button");
-      let btnsSoft = btnsSoftSection.getElementsByTagName("button");
-
-      let btnHardActive = document.getElementById("hard-active-btn");
-      let btnSoftActive = document.getElementById("soft-active-btn");
-
-      for (const btn of btnsHard) {
-        btn.addEventListener("click", () => {
-          btnHardActive.classList.remove("bg-orange-500");
-          btnHardActive.classList.add("bg-green-500");
-        });
-      }
-
-      for (const btn of btnsSoft) {
-        btn.addEventListener("click", () => {
-          btnSoftActive.classList.remove("bg-orange-500");
-          btnSoftActive.classList.add("bg-green-500");
-        });
-      }
-    });
 }
