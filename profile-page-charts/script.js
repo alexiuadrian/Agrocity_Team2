@@ -1,15 +1,3 @@
-//         <body>
-//             <div id="weekly-chart-soft"></div>
-//             <div id="weekly-chart-hard"></div>
-//             <div
-//                 id="evolution-chart-soft"
-//                 data-url="https://docs.google.com/spreadsheets/d/1za2HD8Yy_LJAmd_T-CUsI-uqGjoWLuW22UFnYHrqW4A/gviz/tq?gid=1918886040"
-//             ></div>
-//             <div
-//                 id="evolution-chart-hard"
-//                 data-url="https://docs.google.com/spreadsheets/d/1za2HD8Yy_LJAmd_T-CUsI-uqGjoWLuW22UFnYHrqW4A/gviz/tq?gid=809148773"
-//             ></div>
-
 // apelata fara parametri => saptamana curenta de la inceputul internship-ului
 // apelata cu parametri => calculateWeek(dataInceput, dataSfarsit) --------- dataInceput, dataSfarsit de tip string ---------
 const calculateWeek = (dataInceput = "07/14/2020", dataSfarsit = "nothing") => {
@@ -40,19 +28,27 @@ var hardSkillsEvolutionChart,
   softSkillsWeeklyChart;
 
 // Load the Visualization API and the corechart package.
-google.charts.load("current", { packages: ["corechart"] });
+google.charts.load("current", {
+  packages: ["corechart"]
+});
 // Set a callback to run when the Google Visualization API is loaded.
 google.charts.setOnLoadCallback(drawChart);
 
 // Callback that creates and populates a data table,
 function drawChart() {
   var hardSkillsEvolutionQuery = new google.visualization.Query(hardUrl);
+  hardSkillsEvolutionQuery.setQuery(
+    `SELECT A, B, C, D, E, F, G, H, I`
+  );
   var hardSkillsWeeklyQuery = new google.visualization.Query(hardUrl);
   hardSkillsWeeklyQuery.setQuery(
     `SELECT A, B, C, D, E, F, G, H, I LIMIT 1 OFFSET ${calculateWeek() - 1}`
   );
 
   var softSkillsEvolutionQuery = new google.visualization.Query(softUrl);
+  softSkillsEvolutionQuery.setQuery(
+    `SELECT A, B, C, D, E, F, G, H, I`
+  );
   var softSkillsWeeklyQuery = new google.visualization.Query(softUrl);
   softSkillsWeeklyQuery.setQuery(
     `SELECT A, B, C, D, E, F, G, H, I LIMIT 1 OFFSET ${calculateWeek() - 1}`
@@ -66,11 +62,11 @@ function drawChart() {
 
   function hardSkillsWeeklyQueryResponse(response) {
     var data = response.getDataTable();
-    // Set chart options
+
     var options = {
-      curveType: "none",
       bar: {
         groupWidth: "95%",
+        gap: "8"
       },
       vAxis: {
         baselineColor: "none",
@@ -82,28 +78,23 @@ function drawChart() {
         gridlines: {
           count: 10,
         },
-        title: "Nota",
-        titleTextStyle: {
-          italic: false,
-        },
       },
       legend: {
         position: "top",
         maxLines: 3,
       },
-      pointSize: 3,
       chartArea: {
-        width: "84%",
+        width: "84%"
       },
       colors: [
-        "#fb878a",
-        "#f9c083",
-        "#f7fb95",
-        "#a6fa9a",
-        "#74edff",
-        "#79aaff",
-        "#9d8bff",
-        "#fc9eff",
+        "#cd84f1",
+        "#ffcccc",
+        "#ff4d4d",
+        "#55E6C1",
+        "#ffbe76",
+        "#f6e58d",
+        "#badc58",
+        "#7efff5",
       ],
       fontName: "Open Sans",
     };
@@ -122,9 +113,9 @@ function drawChart() {
 
     // Set chart options
     var options = {
-      curveType: "none",
       bar: {
         groupWidth: "95%",
+        gap: "8"
       },
       vAxis: {
         baselineColor: "none",
@@ -136,31 +127,32 @@ function drawChart() {
         gridlines: {
           count: 10,
         },
-        title: "Nota",
-        titleTextStyle: {
-          italic: false,
-        },
       },
       legend: {
         position: "top",
         maxLines: 3,
       },
-      pointSize: 3,
-      chartArea: { width: "84%" },
+      chartArea: {
+        width: "84%"
+      },
       colors: [
-        "#fb878a",
-        "#f9c083",
-        "#f7fb95",
-        "#a6fa9a",
-        "#74edff",
-        "#79aaff",
-        "#9d8bff",
-        "#fc9eff",
+        "#cd84f1",
+        "#ffcccc",
+        "#ff4d4d",
+        "#55E6C1",
+        "#ffbe76",
+        "#f6e58d",
+        "#badc58",
+        "#7efff5",
       ],
       fontName: "Open Sans",
     };
 
-    softSkillsWeeklyChart = { id: "soft", data: data, options: options };
+    softSkillsWeeklyChart = {
+      id: "soft",
+      data: data,
+      options: options
+    };
     instantiateBarChart(softSkillsWeeklyChart);
   }
 
@@ -177,13 +169,17 @@ function drawChart() {
 
       hAxis: {
         title: "Săptămâna",
-        titleTextStyle: { italic: false },
+        titleTextStyle: {
+          italic: false
+        },
         minValue: 1,
         maxValue: 15,
       },
       vAxis: {
         title: "Nota",
-        titleTextStyle: { italic: false },
+        titleTextStyle: {
+          italic: false
+        },
         minValue: 0,
         maxValue: 10,
         gridlines: {
@@ -192,17 +188,10 @@ function drawChart() {
       },
 
       pointSize: 5,
-      chartArea: { width: "84%" },
-      colors: [
-        "#fb878a",
-        "#f9c083",
-        "#f7fb95",
-        "#a6fa9a",
-        "#74edff",
-        "#79aaff",
-        "#9d8bff",
-        "#fc9eff",
-      ],
+      chartArea: {
+        width: "83%"
+      },
+
       fontName: "Open Sans",
     };
 
@@ -225,30 +214,37 @@ function drawChart() {
       },
       hAxis: {
         title: "Săptămâna",
-        titleTextStyle: { italic: false },
+        titleTextStyle: {
+          italic: false
+        },
         minValue: 1,
         maxValue: 15,
       },
       vAxis: {
         title: "Nota",
         minValue: 0,
+
         maxValue: 10,
         gridlines: {
           count: 10,
         },
-        titleTextStyle: { italic: false },
+        titleTextStyle: {
+          italic: false
+        },
       },
       pointSize: 5,
-      chartArea: { width: "84%" },
+      chartArea: {
+        width: "83%"
+      },
       colors: [
-        "#fb878a",
-        "#f9c083",
-        "#f7fb95",
-        "#a6fa9a",
-        "#74edff",
-        "#79aaff",
-        "#9d8bff",
-        "#fc9eff",
+        "#FEA47F",
+        "#25CCF7",
+        "#EAB543",
+        "#55E6C1",
+        "#B33771",
+        "#9AECDB",
+        "#BDC581",
+        "#82589F",
       ],
       fontName: "Open Sans",
     };
@@ -266,13 +262,16 @@ function drawChart() {
     var newChart = new google.visualization.LineChart(
       document.getElementById(`evolution-chart-${chart.id}`)
     );
+
     newChart.draw(chart.data, chart.options);
   }
 
   function instantiateBarChart(chart) {
     var newChart = new google.visualization.BarChart(
+
       document.getElementById(`weekly-chart-${chart.id}`)
     );
+
     newChart.draw(chart.data, chart.options);
   }
 
@@ -284,3 +283,5 @@ function drawChart() {
     instantiateBarChart(softSkillsWeeklyChart);
   });
 }
+
+

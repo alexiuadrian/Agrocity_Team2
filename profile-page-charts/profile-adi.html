@@ -1,414 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <link rel="icon" type="image/png" href="img/NaN.png" />
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- Tailwind CSS then Fontawesome-->
-    <link
-      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap"
-      rel="stylesheet"
-    />
-    <title>Adi Alexiu - Profil</title>
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <link rel="icon" type="image/png" href="img/NaN.png" />
 
-    <style>
+  <!-- Tailwind CSS then Fontawesome-->
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <title>Adi Alexiu - Profil</title>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <style>
+    main {
+      width: 100%;
+    }
+
+    @media (min-width: 1700px) {
       main {
-        width: 100%;
+        width: 66.6666%;
       }
+    }
 
-      @media (min-width: 1700px) {
-        main {
-          width: 66.6666%;
-        }
-      }
+    #about-me {
+      width: 100%;
+      margin: 0;
+      margin-top: 5rem;
+    }
 
+    @media (min-width: 1700px) {
       #about-me {
-        width: 100%;
-        margin: 0;
-        margin-top: 5rem;
+        width: 66.6666%;
+        margin: auto;
+        margin-top: 10rem;
       }
+    }
 
-      @media (min-width: 1700px) {
-        #about-me {
-          width: 66.6666%;
-          margin: auto;
-          margin-top: 10rem;
-        }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .avatar {
+        min-height: 500px;
       }
+    }
 
-      @media (min-width: 768px) and (max-width: 1024px) {
-        .avatar {
-          min-height: 500px;
-        }
+    @media (max-width: 767px) {
+      .avatar {
+        min-height: 320px;
       }
+    }
 
-      @media (max-width: 767px) {
-        .avatar {
-          min-height: 320px;
-        }
-      }
+    html {
+      scroll-behavior: smooth;
+    }
 
-      html {
-        scroll-behavior: smooth;
-      }
+    .mobile-menu-visible {
+      display: block;
+    }
 
-      .mobile-menu-visible {
-        display: block;
-      }
+    .centered-label {
+      left: 50%;
+      top: -2rem;
+      transform: translateX(-50%);
+      min-width: max-content;
+    }
 
-      .centered-label {
-        left: 50%;
-        top: -2rem;
-        transform: translateX(-50%);
-        min-width: max-content;
-      }
+    .right-label {
+      right: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      min-width: max-content;
+    }
 
-      .right-label {
-        right: -2rem;
-        top: 50%;
-        transform: translateY(-50%);
-        min-width: max-content;
-      }
+    #evolution-chart-soft,
+    #evolution-chart-hard,
+    #weekly-chart-soft,
+    #weekly-chart-hard {
+      width: 100%;
+      height: 400px;
+    }
+
+    @media screen and (max-width: 900px) {
 
       #evolution-chart-soft,
       #evolution-chart-hard,
       #weekly-chart-soft,
       #weekly-chart-hard {
-        width: 100%;
-        height: 400px;
+        height: 35vh;
       }
+    }
 
-      @media screen and (max-width: 900px) {
-        #evolution-chart-soft,
-        #evolution-chart-hard,
-        #weekly-chart-soft,
-        #weekly-chart-hard {
-          height: 35vh;
-        }
-      }
+    .header {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 800;
+    }
 
-      .header {
-        font-family: "Open Sans", sans-serif;
-        font-weight: 800;
-      }
+    .text-content {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+    }
 
-      .text-content {
-        font-family: "Open Sans", sans-serif;
-        font-weight: 400;
-      }
+    .subheader {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 300;
+    }
 
-      .subheader {
-        font-family: "Open Sans", sans-serif;
-        font-weight: 300;
-      }
-      
 
-      .underline{
-        height: 1px;
-        width: 100%;
-        background: #67B26F;
-    /* fallback for old browsers */
-        background: -webkit-linear-gradient(to left, #4ca2cd, #67B26F);
-    /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to left, #4ca2cd, #67B26F);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-      }
+    .underline {
+      height: 1px;
+      width: 100%;
+      background: #67B26F;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to left, #4ca2cd, #67B26F);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to left, #4ca2cd, #67B26F);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
 
-      .header_two{
-        font-weight: 300;
-      }
-    
-    </style>
-  </head>
+    .header_two {
+      font-weight: 300;
+    }
+  </style>
+</head>
 
-  <body class="bg-gray-200">
-    <nav class="border-b bg-white fixed w-full py-1 z-40 top-0">
-      <div class="container mx-auto md:hidden px-2">
-        <div class="flex justify-between items-center">
-          <a href="../homepage/index.html">
-            <img class="h-20 p-3" src="img/NaN.png" />
-          </a>
-          <i id="mobile-hamburger-button" class="fas fa-bars text-gray-500 text-3xl mr-3"></i>
-        </div>
-      
-        <div id="mobile-menu" class="flex justify-start text-right px-5 hidden">
-          <ul class="flex-col text-sm uppercase font-semibold text-gray-500 tracking-widest text-center">
-            <li class="py-2">
-              <a href="#skills" onclick="toggleMenu();">Aptitudini</a>
-            </li>
-            <li class="py-2">
-              <a href="#projects" onclick="toggleMenu();">Proiecte</a>
-            </li>
-            <li class="py-2">
-              <a href="#contact" onclick="toggleMenu();">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div
-        class="mx-20 flex justify-between items-center hidden md:flex"
-      >
+<body class="bg-gray-200">
+  <nav class="border-b bg-white fixed w-full py-1 z-40 top-0">
+    <div class="container mx-auto md:hidden px-2">
+      <div class="flex justify-between items-center">
         <a href="../homepage/index.html">
           <img class="h-20 p-3" src="img/NaN.png" />
         </a>
-        <ul
-          class="flex justify-between text-sm uppercase font-semibold text-gray-500 tracking-widest"
-        >
-          <li class="hover:text-gray-600">
-            <a href="#skills">Aptitudini</a>
+        <i id="mobile-hamburger-button" class="fas fa-bars text-gray-500 text-3xl mr-3"></i>
+      </div>
+
+      <div id="mobile-menu" class="flex justify-start text-right px-5 hidden">
+        <ul class="flex-col text-sm uppercase font-semibold text-gray-500 tracking-widest text-center">
+          <li class="py-2">
+            <a href="#skills" onclick="toggleMenu();">Aptitudini</a>
           </li>
-          <li class="hover:text-gray-600 ml-20">
-            <a href="#projects">Proiecte</a>
+          <li class="py-2">
+            <a href="#projects" onclick="toggleMenu();">Proiecte</a>
           </li>
-          <li class="hover:text-gray-600 ml-20">
-            <a href="#contact">Contact</a>
+          <li class="py-2">
+            <a href="#contact" onclick="toggleMenu();">Contact</a>
           </li>
         </ul>
       </div>
-    </nav>
-    <!-- About me -->
-    <div
-      id="about-me"
-      class="flex flex-col xl:flex-row border border-gray-300 xl:rounded bg-white overflow-hidden shadow-md"
-    >
-      <div class="flex flex-col p-5 md:p-20 justify-center">
-        <div class="leading-relaxed md:leading-normal">
-          <h1 class="text-3xl sm:text-5xl text-gray-600 font-bold header">
-            Adi Alexiu
-          </h1>
-          <h3
-            class="text-gray-500 text-base font-semibold tracking-widest uppercase mb-10 -mt-3 subheader"
-          >
-            Full-stack dev intern
-          </h3>
-        </div>
-        <div
-          class="leading-relaxed md:leading-normal text-gray-600 text-content text-lg xl:text-xl header_two"
-        >
-            <p>În prezent sunt student la Facultatea de Matematică și Informatică, Universitatea din București,
-              în anul III (teoretic, și sper că și practic, ultimul). Am multe hobby-uri asta din cauză că
-              principalul meu hobby
-              e să învăț și să încerc lucruri noi.</p><br>
-          <p>
-              Citatul meu preferat în materie de programare este:<br>
-              <b>
-                  <quote>"Dacă arată stupid dar merge, atunci nu e stupid."</quote>
-              </b><br>
-              Îmi place în primul rând să fac lucrurile să meargă, și vreau să învăț să le fac să și arate
-              bine. Îmi place mai mult partea de back-end și, pentru că sunt foarte
-              paralel cu orice înseamnă design, vreau să știu cât mai multe și despre domeniul acesta.
-          </p>
-        </div>
-      </div>
-      <img
-        src="./img/adi/adi.jpg"
-        alt="Vlad"
-        class="w-auto h-auto object-cover order-first xl:order-none"
-      />
     </div>
 
-    <main class="mx-0 md:mx-5 xl:mx-auto">
-      <!-- Skills -->
-      <div id="skills" class="my-16 xl:py-10">
-        <h3
-          class="mx-5 text-left text-gray-600 text-4xl lg:text-5xl font-bold py-0 header xl:mb-24 border-b border-gray-400"
-        >
-          Aptitudini
-          <!-- <div class="underline"></div> -->
-      </h3>
-        <!-- <img class="w-1/4 max-w-md p-4" src="img/skills-img.png" /> -->
+    <div class="mx-20 flex justify-between items-center hidden md:flex">
+      <a href="../homepage/index.html">
+        <img class="h-20 p-3" src="img/NaN.png" />
+      </a>
+      <ul class="flex justify-between text-sm uppercase font-semibold text-gray-500 tracking-widest">
+        <li class="hover:text-gray-600">
+          <a href="#skills">Aptitudini</a>
+        </li>
+        <li class="hover:text-gray-600 ml-20">
+          <a href="#projects">Proiecte</a>
+        </li>
+        <li class="hover:text-gray-600 ml-20">
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- About me -->
+  <div id="about-me"
+    class="flex flex-col xl:flex-row border border-gray-300 xl:rounded bg-white overflow-hidden shadow-md">
+    <div class="flex flex-col p-5 md:p-20 justify-center">
+      <div class="leading-relaxed md:leading-normal">
+        <h1 class="text-3xl sm:text-5xl text-gray-600 font-bold header">
+          Adi Alexiu
+        </h1>
+        <h3 class="text-gray-500 text-base font-semibold tracking-widest uppercase mb-10 -mt-3 subheader">
+          Full-stack dev intern
+        </h3>
+      </div>
+      <div class="leading-relaxed md:leading-normal text-gray-600 text-content text-lg xl:text-xl header_two">
+        <p>În prezent sunt student la Facultatea de Matematică și Informatică, Universitatea din București,
+          în anul III (teoretic, și sper că și practic, ultimul). Am multe hobby-uri asta din cauză că
+          principalul meu hobby
+          e să învăț și să încerc lucruri noi.</p><br>
+        <p>
+          Citatul meu preferat în materie de programare este:<br>
+          <b>
+            <quote>"Dacă arată stupid dar merge, atunci nu e stupid."</quote>
+          </b><br>
+          Îmi place în primul rând să fac lucrurile să meargă, și vreau să învăț să le fac să și arate
+          bine. Îmi place mai mult partea de back-end și, pentru că sunt foarte
+          paralel cu orice înseamnă design, vreau să știu cât mai multe și despre domeniul acesta.
+        </p>
+      </div>
+    </div>
+    <img src="./img/adi/adi.jpg" alt="Adi" class="w-auto h-auto object-cover order-first xl:order-none" />
+  </div>
 
-        <div>
-          <!-- Weekly skills -->
+  <main class="mx-0 md:mx-5 xl:mx-auto">
+    <!-- Skills -->
+    <div id="skills" class="my-16 xl:py-10">
+      <h3
+        class="mx-5 text-left text-gray-600 text-4xl lg:text-5xl font-bold py-0 header xl:mb-24 border-b border-gray-400">
+        Aptitudini
+        <!-- <div class="underline"></div> -->
+      </h3>
+      <!-- <img class="w-1/4 max-w-md p-4" src="img/skills-img.png" /> -->
+
+      <div>
+        <!-- Weekly skills -->
+        <div id="container-graph" class="w-full flex flex-wrap flex-col lg:flex-row mt-10 mb-5">
           <div
-            id="container-graph"
-            class="w-full flex flex-wrap flex-col lg:flex-row mt-10 mb-5"
-          >
-            <div
-              class="mx-1 md:mx-5 bg-white lg:mr-3 lg:flex-1 flex-col items-center border border-gray-300 rounded-md overflow-hidden pb-5 text-center mb-5 lg:mb-0"
-            >
-              <h3
-                class="w-full text-3xl font-semibold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5"
-              >
-                Hard skills
-              </h3>
-              <div id="weekly-chart-hard"></div>
-            </div>
-            <div
-              class="mx-1 md:mx-5 bg-white lg:ml-3 lg:flex-1 flex flex-col items-center border border-gray-300 rounded-md overflow-hidden pb-5 text-center"
-            >
-              <h3
-                class="w-full text-3xl font-semibold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5"
-              >
-                Soft skills
-              </h3>
-              <div id="weekly-chart-soft"></div>
-            </div>
+            class="mx-1 md:mx-5 bg-white lg:mr-3 lg:flex-1 flex-col items-center border border-gray-300 rounded-md overflow-hidden pb-5 text-center mb-5 lg:mb-0">
+            <h3 class="w-full text-3xl font-semibold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5">
+              Hard skills
+            </h3>
+            <div id="weekly-chart-hard"></div>
+          </div>
+          <div
+            class="mx-1 md:mx-5 bg-white lg:ml-3 lg:flex-1 flex flex-col items-center border border-gray-300 rounded-md overflow-hidden pb-5 text-center">
+            <h3 class="w-full text-3xl font-semibold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5">
+              Soft skills
+            </h3>
+            <div id="weekly-chart-soft"></div>
+          </div>
+        </div>
+
+        <!-- Hard skills Evolution -->
+        <div>
+          <div
+            class="mx-1 md:mx-5 bg-white flex flex-col items-center border border-gray-300 rounded-md overflow-hidden my-5 pb-10 text-center">
+            <h3 class="w-full text-3xl font-semibold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5">
+              Hard skills - Evoluție săptămânală
+            </h3>
+            <div id="evolution-chart-hard"
+              data-url="https://docs.google.com/spreadsheets/d/1za2HD8Yy_LJAmd_T-CUsI-uqGjoWLuW22UFnYHrqW4A/gviz/tq?gid=955498043"
+              class="flex items-center w-full mt-5 px-2 xl:px-10"></div>
           </div>
 
-          <!-- Hard skills Evolution -->
-          <div>
-            <div
-              class="mx-1 md:mx-5 bg-white flex flex-col items-center border border-gray-300 rounded-md overflow-hidden my-5 pb-10 text-center"
-            >
-              <h3
-                class="w-full text-3xl font-semibold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5"
-              >
-                Hard skills - Evoluție săptămânală
-              </h3>
-              <div
-                id="evolution-chart-hard"
-                data-url="https://docs.google.com/spreadsheets/d/1za2HD8Yy_LJAmd_T-CUsI-uqGjoWLuW22UFnYHrqW4A/gviz/tq?gid=955498043"
-                class="flex items-center w-full mt-5 px-2 xl:px-10"
-              ></div>
-            </div>
-
-            <!-- Soft skills Evolution -->
-            <div
-              class="mx-1 md:mx-5 bg-white flex flex-col items-center border border-gray-300 rounded-md overflow-hidden my-5 pb-10 text-center"
-            >
-              <h3
-                class="w-full text-3xl font-semibold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5"
-              >
-                Soft skills - Evoluție săptămânală
-              </h3>
-              <div
-                id="evolution-chart-soft"
-                data-url="https://docs.google.com/spreadsheets/d/1za2HD8Yy_LJAmd_T-CUsI-uqGjoWLuW22UFnYHrqW4A/gviz/tq?gid=1920951961"
-                class="flex items-center w-full mt-5 px-2 xl:px-10"
-              ></div>
-            </div>
+          <!-- Soft skills Evolution -->
+          <div
+            class="mx-1 md:mx-5 bg-white flex flex-col items-center border border-gray-300 rounded-md overflow-hidden my-5 pb-10 text-center">
+            <h3 class="w-full text-3xl font-semibold text-center text-gray-500 py-6 border-b bg-gray-100 mb-5">
+              Soft skills - Evoluție săptămânală
+            </h3>
+            <div id="evolution-chart-soft"
+              data-url="https://docs.google.com/spreadsheets/d/1za2HD8Yy_LJAmd_T-CUsI-uqGjoWLuW22UFnYHrqW4A/gviz/tq?gid=1920951961"
+              class="flex items-center w-full mt-5 px-2 xl:px-10"></div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Portfolio -->
-      <div id="projects" class="my-0 my-16">
-        <div class="text-center mb-10">
-          <h3
-            class="mx-5 text-left text-gray-600 text-4xl lg:text-5xl font-bold py-0 border-b border-gray-400 header xl:mb-24"
-          >
-            Proiecte
-          </h3>
-        </div>
+    <!-- Portfolio -->
+    <div id="projects" class="my-0 my-16">
+      <div class="text-center mb-10">
+        <h3
+          class="mx-5 text-left text-gray-600 text-4xl lg:text-5xl font-bold py-0 border-b border-gray-400 header xl:mb-24">
+          Proiecte
+        </h3>
+      </div>
 
-        <div
-          class="mx-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-20"
-        >
-          
+      <div class="mx-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-20">
+
         <a href="https://play.google.com/store/apps/details?id=com.mds.eventifind" target="_blank">
-            <div
-                class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                <img class="block h-auto w-full border-b" src="img/adi/eventifind.png" alt="Eventifind">
-                <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Eventifind
-                </div>
+          <div
+            class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+            <img class="block h-auto w-full border-b" src="img/adi/eventifind.png" alt="Eventifind">
+            <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Eventifind
             </div>
+          </div>
         </a>
 
         <a href="https://github.com/alexiuadrian/Lyric-Finder" target="_blank">
-            <div
-                class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                <img class="block h-auto w-full border-b" src="img/adi/lyric-finder.png" alt="Lyric-Finder">
-                <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Lyric Finder
-                </div>
+          <div
+            class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+            <img class="block h-auto w-full border-b" src="img/adi/lyric-finder.png" alt="Lyric-Finder">
+            <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Lyric Finder
             </div>
+          </div>
         </a>
 
         <a href="https://alexiuadrian.github.io/Bucurestiul-in-culori/" target="_blank">
           <div
-              class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-              <img class="block h-auto w-full border-b" src="img/adi/Bucurestiul-in-culori.png" alt="Bucurestiul-in-culori">
-              <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Bucurestiul in culori
-              </div>
+            class="card overflow-hidden rounded-lg border transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+            <img class="block h-auto w-full border-b" src="img/adi/Bucurestiul-in-culori.png"
+              alt="Bucurestiul-in-culori">
+            <div class="font-bold text-xl title text-center text-orange-500 bg-gray-100 py-1">Bucurestiul in culori
+            </div>
           </div>
-      </a>
+        </a>
 
-        </div>
       </div>
+    </div>
 
-      <!-- Personal info -->
-      <footer id="contact" class="my-16 pt-10 pb-10">
-        <div
-          class="mx-auto max-w-md text-sm lg:text-normal lg:font-semibold text-gray-700"
-        >
-          <!-- Social links -->
-          <div class="flex justify-center mt-6">
-            <a
-              class="w-10 flex-shrink-0 mx-2"
-              href="https://www.facebook.com/adi.alexiu"
-              target="_blank"
-            >
-              <i
-                class="fab fa-facebook-square text-gray-600 text-5xl hover:text-gray-700"
-              ></i>
-            </a>
-            <a
-              class="w-10 flex-shrink-0 mx-2"
-              href="https://www.instagram.com/adi.alexiu"
-              target="_blank"
-            >
-              <i
-                class="fab fa-instagram-square text-gray-600 text-5xl hover:text-gray-700"
-              ></i>
-            </a>
-            <!-- <a class="w-10 flex-shrink-0" target="_blank">
+    <!-- Personal info -->
+    <footer id="contact" class="my-16 pt-10 pb-10">
+      <div class="mx-auto max-w-md text-sm lg:text-normal lg:font-semibold text-gray-700">
+        <!-- Social links -->
+        <div class="flex justify-center mt-6">
+          <a class="w-10 flex-shrink-0 mx-2" href="https://www.facebook.com/adi.alexiu" target="_blank">
+            <i class="fab fa-facebook-square text-gray-600 text-5xl hover:text-gray-700"></i>
+          </a>
+          <a class="w-10 flex-shrink-0 mx-2" href="https://www.instagram.com/adi.alexiu" target="_blank">
+            <i class="fab fa-instagram-square text-gray-600 text-5xl hover:text-gray-700"></i>
+          </a>
+          <!-- <a class="w-10 flex-shrink-0" target="_blank">
                         <i class="fab fa-twitter-square text-orange-400" style="font-size:35px;"></i>
                     </a> -->
-            <a
-              class="w-10 flex-shrink-0 mx-2"
-              href="https://ro.linkedin.com/in/vlad-andrei-albescu-69a274195"
-              target="_blank"
-            >
-              <i
-                class="fab fa-linkedin text-gray-600 text-5xl hover:text-gray-700"
-              ></i>
-            </a>
-            <a
-              class="w-10 flex-shrink-0 mx-2"
-              href="https://github.com/alexiuadrian"
-              target="_blank"
-            >
-              <i
-                class="fab fa-github-square text-gray-600 text-5xl hover:text-gray-700"
-              ></i>
-            </a>
-            <a href="mailto:adi.alexiu@gmail.com" class="w-10 flex-shrink-0 mx-2">
-              <i
-                class="fas fa-envelope-square text-5xl text-gray-600 hover:text-gray-700"
-              ></i>
-            </a>
-          </div>
+          <a class="w-10 flex-shrink-0 mx-2" href="https://ro.linkedin.com/in/vlad-andrei-albescu-69a274195"
+            target="_blank">
+            <i class="fab fa-linkedin text-gray-600 text-5xl hover:text-gray-700"></i>
+          </a>
+          <a class="w-10 flex-shrink-0 mx-2" href="https://github.com/alexiuadrian" target="_blank">
+            <i class="fab fa-github-square text-gray-600 text-5xl hover:text-gray-700"></i>
+          </a>
+          <a href="mailto:adi.alexiu@gmail.com" class="w-10 flex-shrink-0 mx-2">
+            <i class="fas fa-envelope-square text-5xl text-gray-600 hover:text-gray-700"></i>
+          </a>
         </div>
-      </footer>
-    </main>
+      </div>
+    </footer>
+  </main>
 
-    <script>
-      // Responsive menu
-      function toggleMenu() {
-        document
-          .querySelector("#mobile-menu")
-          .classList.toggle("mobile-menu-visible");
-      }
-
+  <script>
+    // Responsive menu
+    function toggleMenu() {
       document
-        .querySelector("#mobile-hamburger-button")
-        .addEventListener("click", toggleMenu);
-    </script>
-    <script src="script.js"></script>
-  </body>
+        .querySelector("#mobile-menu")
+        .classList.toggle("mobile-menu-visible");
+    }
+
+    document
+      .querySelector("#mobile-hamburger-button")
+      .addEventListener("click", toggleMenu);
+  </script>
+  <script src="script.js"></script>
+</body>
+
 </html>
-  </body>
+</body>
+
 </html>
