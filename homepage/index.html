@@ -17,172 +17,231 @@
 
 </head>
 
-<body id="top" class="antialiased bg-gray-200">
-    <nav class="border-b bg-white fixed top-0 w-full py-1 z-10 relative">
-        <div class="lg:ml-20 logo">
+<body id="top" class="antialiased bg-gray-200 relative">
+    <nav class="border-b bg-white fixed w-full py-1 z-40 top-0 shadow-md">
+        <div class="bg-white mx-8 md:mx-20 flex justify-center md:justify-between items-center flex">
             <a href="../homepage/index.html">
                 <img class="h-20 p-3" src="img/NaN.png" />
             </a>
         </div>
     </nav>
+
     <!-- TODO: -->
     <div
-        class="bg-white  shadow-md bordery-gray-300 mx-auto flex justify-center items-center py-12 px-12 flex-wrap sm:px-1 h-full xl:mb-48 mt-16">
-        <div class="sm:w-full xl:w-2/5 lg:w-5/12 lg:p-6">
-            <img src="img/agrocity2.png" class="sm:w-full xl:w-full">
-        </div>
-        <div class="flex flex-col py-5  sm:w-auto text-gray-600 sm:w-full sm:px-12 my-6 xl:w-2/5 lg:w-2/5 sm:mb-12">
-            <h1 class="xl:text-5xl sm:text-xs font-black header__one border-b border-gray-400 xl:border-none">Bine ai
+        class="bg-white shadow-md border-gray-300 mx-auto flex justify-center items-center px-5 md:px-12 pb-10 pt-16 flex-wrap h-full mb-12 xl:mb-16">
+        <div class="flex flex-col py-5  sm:w-auto text-gray-600 sm:w-full my-6 xl:w-2/5 lg:w-2/5 sm:mb-12">
+            <h1 class="xl:text-5xl text-3xl font-black header__one border-b border-gray-400 xl:border-none">Bine ai
                 venit!</h1>
-            <div class="md:text-lg xl:text-xl py-4 header__two sm:text-xs">
-                Noi suntem echipa NaN (Not a Number) și asta e pagina noastra principală.
-                Am început împreună acest internship cu multă ambiție și curiozitate, toți fiind de o diversitate și
-                voință ieșită din comun! Așa ar fi spus un povestitor. Așadar, am decis să ne adunăm super puterile
-                și să schimbăm lumea cu ajutorul codului nostru.
+            <div class="md:text-lg xl:text-xl py-4 header__two">
+                <p>
+                    Noi suntem echipa NaN (Not a Number) și asta e pagina noastra principală.
+                    Am început împreună acest internship cu multă ambiție și curiozitate, toți fiind de o diversitate și
+                    voință ieșită din comun!
+                </p>
+
+                <br>
+
+                <p>
+                    Așa ar fi spus un povestitor. Așadar, am decis să ne adunăm super puterile și să schimbăm lumea cu
+                    ajutorul codului nostru.
+                </p>
             </div>
             <button
-                class="w-56 mt-8 text-sm uppercase tracking-widest font-semibold text-center text-white rounded-sm px-12 py-6 card-button focus:outline-none">
+                class="w-56 mt-8 text-base uppercase tracking-widest text-center text-white rounded-sm px-2 py-4 card-button focus:outline-none font-semibold mx-auto md:mx-0">
                 <a href="#echipa">Vezi Echipa</a>
             </button>
         </div>
+        <div class="md:w-full xl:w-2/5 lg:w-5/12 md:p-6">
+            <img src="img/agrocity2.png" class="sm:w-full xl:w-full">
+        </div>
     </div>
-    <!-- FIXME: -->
-    <div class="mx-1 xl:mx-20 my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-8 content-center"
-        id="echipa">
-        <a href=""
-            class="bg-white overflow-hidden rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1  shadow-xl">
 
-            <img class="block h-auto w-full grayscale" src="img/razvan.png" alt="Razvan Manole">
-
-            <div class="px-4 py-4 h-56">
-                <div class="font-bold text-xl mb-2 title text-gray-600">Razvan Manole <i
-                        class="fas fa-crown text-base text-yellow-600"></i>
-                </div>
-                <h3 class="text-gray-500 text-xs font-semibold tracking-widest uppercase -m-3 mb-4 pl-3">
-                    Coordonator
-                </h3>
-                <p class="text-gray-600 text-sm description">
-                    "Dacă nu dădeau un gol în plus față de noi era egal".
-                </p>
-                <p class="text-gray-600 text-sm description mt-3">- Gică Hagi</p>
+    <!-- --------------------NEW CARDS---------------- -->
+    <div id="echipa" class="container mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 lg:gap-6">
+        <div class="lg:flex bg-white relative rounded overflow-hidden shadow-md">
+            <div class="h-48 lg:h-auto lg:w-40 flex-none bg-cover text-center"
+                style="background-image: url('./img/razvan.png'); background-position:top; background-size: cover;"
+                title="Razvan Manole">
             </div>
-            <button
-                class="w-full text-sm uppercase tracking-widest font-semibold text-center text-white py-6 card-button text-content absolute bottom-0">
-                Vezi profil
-            </button>
-        </a>
-
-        <a href="../profile-page-charts/profile-adi.html"
-            class="bg-white flex-1  overflow-hidden rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1  shadow-xl ">
-            <img class="block h-auto w-full grayscale" src="img/adi.jpg" alt="Adi Alexiu">
-            <div class="px-4 py-4 h-56">
-                <div class="font-bold text-xl mb-2 title text-gray-600">Adi Alexiu <i
-                        class="fas fa-crown text-base text-yellow-600"></i>
-                </div>
-                <h3 class="text-gray-500 text-xs font-semibold tracking-widest uppercase -m-3 mb-4 pl-3">
-                    Full-stack
-                    dev intern
-                </h3>
-                <p class="text-gray-600 text-sm description text-xs">
-                    "It's OK to have your eggs in one basket as long as you control what happens to that basket."
-                </p>
-                <p class="text-gray-600 text-sm description mt-3 text-xs">- Elon Musk</p>
-            </div>
-            <button
-                class="w-full text-sm uppercase tracking-widest font-semibold text-center text-white py-6 card-button text-content absolute bottom-0">
-                Vezi profil
-            </button>
-        </a>
-
-        <a href="../profile-page-charts/profile-alexandra.html"
-            class="bg-white  overflow-hidden rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1  shadow-xl">
-
-            <img class="block h-auto w-full grayscale" src="img/alex.jpg" alt="Alexandra Cismariu">
-
-            <div class="px-4 py-4 h-56">
-                <div class="font-bold text-xl mb-2 title text-gray-600">Alexandra Cismariu</div>
-                <h3 class="text-gray-500 text-xs font-semibold tracking-widest uppercase -m-3 mb-4 pl-3">
-                    Full-stack
-                    dev intern
-                </h3>
-                <p class="text-gray-600 text-sm description text-xs">
-                    "E destul să vrei hotărât un lucru, pentru ca evoluția să se petreacă".
-                </p>
-                <p class="text-gray-600 text-sm description mt-3 text-xs">- Tudor Arghezi</p>
-            </div>
-            <button
-                class="w-full text-sm uppercase tracking-widest font-semibold text-center text-white py-6 card-button text-content absolute bottom-0">
-                Vezi profil
-            </button>
-        </a>
-
-        <a href="../profile-page-charts/profile-vlad.html"
-            class="bg-white  overflow-hidden rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1  shadow-xl">
-            <img class="block h-auto w-full grayscale" src="img/vlad.jpg" alt="vlad albescu">
-            <div class="px-4 py-4 h-56">
-                <div class="font-bold text-xl mb-2 title text-gray-600">Vlad Albescu</div>
-                <h3 class="text-gray-500 text-xs font-semibold tracking-widest uppercase -m-3 mb-4 pl-3">
-                    Full-stack dev intern
-                </h3>
-                <p class="text-gray-600 text-sm description text-xs">
-                    "Doc, my brother's crazy! He thinks he's a chicken". The doc says "Why don't you turn him in?",
-                    then the guy says "I would but I need the eggs."
-                </p>
-                <p class="text-gray-600 text-sm description mt-3 text-xs">- Woody Allen</p>
-            </div>
-            <button
-                class="w-full text-sm uppercase tracking-widest font-semibold text-center text-white py-6 card-button text-content absolute bottom-0">
-                Vezi profil
-            </button>
-        </a>
-
-        <a href="../profile-page-charts/profile-cristi.html" class="bg-white overflow-hidden rounded-lg
-            transition duration-500 ease-in-out transform hover:-translate-y-1 shadow-xl">
-            <img class="block h-auto w-full grayscale" src="img/cristian.jpg" alt="cristian angheluta">
-            <div class="px-4 py-4 h-56">
-                <div class="font-bold text-xl mb-2 title text-gray-600">Cristian Angheluta</div>
-                <h3 class="text-gray-500 text-xs font-semibold tracking-widest uppercase -m-3 mb-4 pl-3">
-                    Full-stack
-                    dev intern
-                </h3>
-                <p class="text-gray-600 text-sm description text-xs">
-
-                    “The best time to plant a tree was 20 years ago. The second best time is now.”
-                </p>
-                <p class="text-gray-600 text-sm description mt-3 text-xs">- Chinese Proverb</p>
-            </div>
-            <button
-                class="w-full text-sm uppercase tracking-widest font-semibold text-center text-white py-6 card-button text-content absolute bottom-0">
-                Vezi profil
-            </button>
-
-        </a>
-
-        <a href="../profile-page-charts/profile-adelina.html">
-            <div
-                class="card-width bg-white overflow-hidden rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1  shadow-xl">
-                <img class="block h-auto w-full grayscale" src="img/ade.jpg" alt="adelina lipsa">
-                <div class="px-4 py-5 h-56">
-                    <div class="font-bold text-xl mb-2 title text-gray-600">Adelina Lipsa</div>
-                    <h3 class="text-gray-500 text-xs font-semibold tracking-widest uppercase -m-3 mb-4 pl-3">
-                        Full-stack
-                        dev intern
+            <div class="md:h-64 p-4 flex flex-col justify-between leading-normal">
+                <div class="pb-10">
+                    <div class="text-gray-900 font-bold text-xl leading-none mb-1">Razvan Manole</div>
+                    <h3 class="text-gray-600 text-xs font-semibold tracking-widest uppercase leading-none mb-4">
+                        Coordonator
                     </h3>
-
                     <p class="text-gray-600 text-sm description text-xs">
-                        “One's doing well if age improves even slightly one's capacity to hold on to that vital truism:
-                        "This too shall pass.”
-                    </p>
-                    <p class="text-gray-600 text-sm description mt-3 text-xs">- Alain de Botton</p>
-                </div>
-                <button
-                    class="w-full text-sm uppercase tracking-widest font-semibold text-center text-white py-6 card-button text-content">
-                    Vezi profil
-                </button>
+                        "Dacă nu dădeau un gol în plus față de noi era egal".
 
+                    </p>
+                    <p class="text-gray-600 text-sm description mt-3 text-xs">- Gica Hagi</p>
+
+                </div>
+                <div class="flex justify-end">
+                    <div class="text-sm">
+                        <button
+                            class="bg-transparent hover:bg-gray-500 text-white font-semibold hover:text-white py-2 px-4  hover:border-transparent card-button absolute right-0 bottom-0 tracking-widest text-sm rounded-tl">VEZI
+                            PROFIL <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
             </div>
-        </a>
+        </div>
+
+
+        <div class="lg:flex bg-white relative rounded overflow-hidden shadow-md">
+            <div class="h-48 lg:h-auto lg:w-40 flex-none bg-cover text-center" style="background-image: url('img/adi.jpg');
+                background-position:center; background-size: cover;" title="Adi Alexiu">
+            </div>
+            <div class="md:h-64 p-4 flex flex-col justify-between leading-normal">
+                <div class="pb-10">
+                    <div class="text-gray-900 font-bold text-xl mb-1 leading-none">Adi Alexiu</div>
+                    <h3 class="text-gray-600 text-xs font-semibold tracking-widest uppercase leading-none mb-4">
+                        Full stack Dev intern
+                    </h3>
+                    <p class="text-gray-600 description text-sm">
+                        "It's OK to have your eggs in one basket as long as you control what happens to that basket".
+
+                    </p>
+                    <p class="text-gray-600 description mt-3 text-sm">- Elon Musk</p>
+
+                </div>
+                <div class="flex justify-end">
+                    <div class="text-sm">
+                        <a href="../profile-page-charts/profile-adi.html">
+                            <button
+                                class="bg-transparent hover:bg-gray-500 text-white font-semibold hover:text-white py-2 px-4  hover:border-transparent card-button absolute right-0 bottom-0 tracking-widest text-sm rounded-tl">VEZI
+                                PROFIL <i class="fas fa-chevron-right"></i></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:flex bg-white relative rounded overflow-hidden shadow-md">
+            <div class="h-48 lg:h-auto lg:w-40 flex-none bg-cover text-center"
+                style="background-image: url('./img/alex.jpg'); background-position:center; background-size: cover;"
+                title="Alexandra Cismariu">
+            </div>
+            <div class="md:h-64 p-4 flex flex-col justify-between leading-normal">
+                <div class="pb-10">
+                    <div class="text-gray-900 font-bold text-xl mb-1 leading-none">Alexandra Cismariu</div>
+                    <h3 class="text-gray-600 text-xs font-semibold tracking-widest uppercase leading-none mb-4">
+                        Full stack Dev intern
+                    </h3>
+                    <p class="text-gray-600 description text-sm">
+                        "E destul să vrei hotărât un lucru, pentru ca evoluția să se petreacă".
+
+                    </p>
+                    <p class="text-gray-600 description mt-3 text-sm">- Tudor Arghezi</p>
+
+                </div>
+                <div class="flex justify-end">
+                    <div class="text-sm">
+                        <a href="../profile-page-charts/profile-alexandra.html">
+                            <button
+                                class="bg-transparent hover:bg-gray-500 text-white font-semibold hover:text-white py-2 px-4  hover:border-transparent card-button absolute right-0 bottom-0 tracking-widest text-sm rounded-tl">VEZI
+                                PROFIL <i class="fas fa-chevron-right"></i></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:flex bg-white relative rounded overflow-hidden shadow-md">
+            <div class="h-48 lg:h-auto lg:w-40 flex-none bg-cover  text-center"
+                style="background-image: url('./img/vlad.jpg'); background-position:center; background-size: cover;"
+                title="Vlad Albescu">
+            </div>
+            <div class="md:h64 p-4 flex flex-col justify-between leading-normal">
+                <div class="pb-10">
+                    <div class="text-gray-900 font-bold text-xl mb-1 leading-none">Vlad Albescu</div>
+                    <h3 class="text-gray-600 text-xs font-semibold tracking-widest uppercase leading-none mb-4">
+                        Full stack Dev intern
+                    </h3>
+                    <p class="text-gray-600 text-sm description text-sm">
+                        "Doc, my brother's crazy! He thinks he's a chicken". The doc says "Why don't you turn him in?",
+                        then the guy says "I would but I need the eggs."
+
+                    </p>
+                    <p class="text-gray-600 text-sm description mt-3 text-sm">- Woody Allen</p>
+
+                </div>
+                <div class="flex justify-end">
+                    <div class="text-sm">
+                        <a href="../profile-page-charts/profile-vlad.html">
+                            <button
+                                class="bg-transparent hover:bg-gray-500 text-white font-semibold hover:text-white py-2 px-4  hover:border-transparent card-button absolute right-0 bottom-0 tracking-widest text-sm rounded-tl">VEZI
+                                PROFIL <i class="fas fa-chevron-right"></i></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:flex bg-white relative rounded overflow-hidden shadow-md">
+            <div class="h-48 lg:h-auto lg:w-40 flex-none bg-cover text-center" r text-center"r text-center"
+                style="background-image: url('./img/cristian.jpg'); background-position:center; background-size: cover;"
+                title="Cristian Angheluta">
+            </div>
+            <div class="md:h-64 p-4 flex flex-col justify-between leading-normal">
+                <div class="pb-10">
+                    <div class="text-gray-900 font-bold text-xl mb-1 leading-none">Cristian Angheluta</div>
+                    <h3 class="text-gray-600 text-xs font-semibold tracking-widest uppercase leading-none mb-4">
+                        Full stack Dev intern
+                    </h3>
+                    <p class="text-gray-600 text-sm description">
+                        “The best time to plant a tree was 20 years ago. The second best time is now.”
+
+                    </p>
+                    <p class="text-gray-600 text-sm description mt-3">- Chinese proverb</p>
+
+                </div>
+                <div class="flex justify-end">
+                    <div class="text-sm">
+                        <a href="../profile-page-charts/profile-cristi.html">
+                            <button
+                                class="bg-transparent hover:bg-gray-500 text-white font-semibold hover:text-white py-2 px-4  hover:border-transparent card-button absolute right-0 bottom-0 tracking-widest text-sm rounded-tl">VEZI
+                                PROFIL <i class="fas fa-chevron-right"></i></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:flex bg-white relative rounded overflow-hidden shadow-md">
+            <div class="h-48 lg:h-auto lg:w-40 flex-none bg-cover text-center"
+                style="background-image: url('./img/ade.jpg'); background-position:center; background-size: cover;"
+                title="Adelina Lipsa">
+            </div>
+            <div class="md:h-64 p-4 flex flex-col justify-between leading-normal">
+                <div class="pb-10">
+
+                    <div class="text-gray-900 font-bold text-xl mb-1 leading-none">Adelina Lipsa</div>
+                    <h3 class="text-gray-600 text-xs font-semibold tracking-widest uppercase leading-none mb-4">
+                        Full stack Dev intern
+                    </h3>
+                    <p class="text-gray-600 text-sm description">
+                        “One's doing well if age improves even slightly one's capacity to hold on to that vital
+                        truism:
+                        "This too shall pass.”
+
+                    </p>
+                    <p class="text-gray-600 text-sm description mt-3">- Alain de Botton</p>
+
+                </div>
+                <div class="flex justify-end">
+                    <div class="text-sm">
+                        <a href="../profile-page-charts/profile-adelina.html">
+                            <button
+                                class="bg-transparent hover:bg-gray-500 text-white font-semibold hover:text-white py-2 px-4  hover:border-transparent card-button absolute right-0 bottom-0 tracking-widest text-sm rounded-tl">VEZI
+                                PROFIL <i class="fas fa-chevron-right"></i></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+
     <div class="mx-auto card-button mt-20 mb-10 rounded-full p-8 h-16 w-16 flex items-center justify-center shadow-md
         cursor-pointer">
         <a href="#top"><i class="text-center mx-auto text-3xl text-white  fas fa-arrow-up"></i></a>

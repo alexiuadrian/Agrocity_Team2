@@ -134,3 +134,25 @@ body::-webkit-scrollbar-thumb {
         filter: brightness(100%);
     }
 }
+
+.cursor-pointer:hover {
+    animation: spin .3s linear;
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
