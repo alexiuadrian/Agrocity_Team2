@@ -31,8 +31,7 @@ if ($num > 0) {
             'id' => $id,
             'title' => $title,
             'body' => html_entity_decode($body),
-            'author' => $author,
-            'category_name' => $category_name
+            'author' => $author
         );
 
         // Push to "data"

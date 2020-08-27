@@ -3,12 +3,10 @@ class Post
 {
   // DB stuff
   private $connection;
-  private $table = 'paragraphs';
+  private $table = 'books';
 
   // Post Properties
   public $id;
-  public $category_id;
-  public $category_name;
   public $title;
   public $body;
   public $author;
@@ -23,12 +21,7 @@ class Post
   public function read()
   {
     // Create query
-    $query = 'SELECT c.name as category_name, p.id, p.title, p.body, p.author
-                              FROM ' . $this->table . ' p
-                              LEFT JOIN
-                                books c ON c.id = p.id
-                              ORDER BY
-                                p.id';
+    $query = 'SELECT b.id, b.title, b.body, b.author FROM ' . $this->table . ' b ORDER BY b.id';
 
     // Prepare statement
     $statement = $this->connection->prepare($query);
@@ -43,13 +36,7 @@ class Post
   public function read_single()
   {
     // Create query
-    $query = 'SELECT c.name as category_name, p.id,  p.title, p.body, p.author
-                                  FROM ' . $this->table . ' p
-                                  LEFT JOIN
-                                    books c ON  c.id = p.id
-                                  WHERE
-                                    p.id = ?
-                                  LIMIT 0,1';
+    $query = 'SELECT b.id,  b.title, b.body, b.author FROM ' . $this->table;
 
     // Prepare statement
     $statement = $this->connection->prepare($query);
@@ -66,102 +53,5 @@ class Post
     $this->title = $row['title'];
     $this->body = $row['body'];
     $this->author = $row['author'];
-    $this->category_name = $row['category_name'];
-  }
-
-
-
-  // Create Post
-  public function create()
-  {
-    // Create query
-    $query = 'INSERT INTO ' . $this->table . ' SET title = :title, body = :body, author = :author, category_id = :category_id';
-
-    // Prepare statement
-    $stmt = $this->conn->prepare($query);
-
-    // Clean data
-    $this->title = htmlspecialchars(strip_tags($this->title));
-    $this->body = htmlspecialchars(strip_tags($this->body));
-    $this->author = htmlspecialchars(strip_tags($this->author));
-    $this->category_id = htmlspecialchars(strip_tags($this->category_id));
-
-    // Bind data
-    $stmt->bindParam(':title', $this->title);
-    $stmt->bindParam(':body', $this->body);
-    $stmt->bindParam(':author', $this->author);
-    $stmt->bindParam(':category_id', $this->category_id);
-
-    // Execute query
-    if ($stmt->execute()) {
-      return true;
-    }
-
-    // Print error if something goes wrong
-    printf("Error: %s.\n", $stmt->error);
-
-    return false;
-  }
-
-  // Update Post
-  public function update()
-  {
-    // Create query
-    $query = 'UPDATE ' . $this->table . '
-                        SET title = :title, body = :body, author = :author, category_id = :category_id
-                        WHERE id = :id';
-
-    // Prepare statement
-    $stmt = $this->conn->prepare($query);
-
-    // Clean data
-    $this->title = htmlspecialchars(strip_tags($this->title));
-    $this->body = htmlspecialchars(strip_tags($this->body));
-    $this->author = htmlspecialchars(strip_tags($this->author));
-    $this->category_id = htmlspecialchars(strip_tags($this->category_id));
-    $this->id = htmlspecialchars(strip_tags($this->id));
-
-    // Bind data
-    $stmt->bindParam(':title', $this->title);
-    $stmt->bindParam(':body', $this->body);
-    $stmt->bindParam(':author', $this->author);
-    $stmt->bindParam(':category_id', $this->category_id);
-    $stmt->bindParam(':id', $this->id);
-
-    // Execute query
-    if ($stmt->execute()) {
-      return true;
-    }
-
-    // Print error if something goes wrong
-    printf("Error: %s.\n", $stmt->error);
-
-    return false;
-  }
-
-  // Delete Post
-  public function delete()
-  {
-    // Create query
-    $query = 'DELETE FROM ' . $this->table . ' WHERE id = :id';
-
-    // Prepare statement
-    $stmt = $this->conn->prepare($query);
-
-    // Clean data
-    $this->id = htmlspecialchars(strip_tags($this->id));
-
-    // Bind data
-    $stmt->bindParam(':id', $this->id);
-
-    // Execute query
-    if ($stmt->execute()) {
-      return true;
-    }
-
-    // Print error if something goes wrong
-    printf("Error: %s.\n", $stmt->error);
-
-    return false;
   }
 }
