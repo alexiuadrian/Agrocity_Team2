@@ -1,5 +1,5 @@
 <?php
-class Post
+class Quote
 {
   // DB stuff
   private $connection;
@@ -32,6 +32,7 @@ class Post
     return $statement;
   }
 
+
   // Get Single Post
   public function read_single()
   {
@@ -53,5 +54,36 @@ class Post
     $this->title = $row['title'];
     $this->body = $row['body'];
     $this->author = $row['author'];
+  }
+
+
+  //  // Create Post
+  public function create()
+  {
+    // Create query
+    $query = 'INSERT INTO ' . $this->table . ' SET title = :title, body = :body, author = :author';
+
+    // Prepare statement
+    $stmt = $this->connection->prepare($query);
+
+    // Clean data
+    $this->title = htmlspecialchars(strip_tags($this->title));
+    $this->body = htmlspecialchars(strip_tags($this->body));
+    $this->author = htmlspecialchars(strip_tags($this->author));
+
+    // Bind data
+    $stmt->bindParam(':title', $this->title);
+    $stmt->bindParam(':body', $this->body);
+    $stmt->bindParam(':author', $this->author);
+
+    // Execute query
+    if ($stmt->execute()) {
+      return true;
+    }
+
+    // Print error if something goes wrong
+    printf("Error: %s.\n", $stmt->error);
+
+    return false;
   }
 }

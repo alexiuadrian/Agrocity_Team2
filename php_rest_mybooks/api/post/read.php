@@ -10,24 +10,24 @@ include_once '../../models/Post.php';
 $database = new Database();
 $db = $database->connect();
 
-// Instantiate books post object
-$post = new Post($db);
+// Instantiate books quote object
+$quote = new Quote($db);
 
-// Blog post query
-$result = $post->read();
+// Blog quote query
+$result = $quote->read();
 // Get row count
 $num = $result->rowCount();
 
-// Check if any posts
+// Check if any quotes
 if ($num > 0) {
-    // Post array
-    $posts_arr = array();
-    // $posts_arr['data'] = array();
+    // quote array
+    $quotes_arr = array();
+    // $quotes_arr['data'] = array();
 
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
 
-        $post_item = array(
+        $quote_item = array(
             'id' => $id,
             'title' => $title,
             'body' => html_entity_decode($body),
@@ -35,15 +35,15 @@ if ($num > 0) {
         );
 
         // Push to "data"
-        array_push($posts_arr, $post_item);
-        // array_push($posts_arr['data'], $post_item);
+        array_push($quotes_arr, $quote_item);
+        // array_push($quotes_arr['data'], $quote_item);
     }
 
     // Turn to JSON & output
-    echo json_encode($posts_arr);
+    echo json_encode($quotes_arr);
 } else {
-    // No Posts
+    // No quotes
     echo json_encode(
-        array('message' => 'No Posts Found')
+        array('message' => 'No quotes Found')
     );
 }
