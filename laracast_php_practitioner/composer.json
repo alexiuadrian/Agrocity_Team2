@@ -1,0 +1,16 @@
+{
+    "name": "adelina/laracast_php_practitioner",
+    "authors": [
+        {
+            "name": "AdelinaLipsa",
+            "email": "adelina.lipsa@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "./"
+        ],
+        "files": ["core/helpers.php"]
+    }
+}
