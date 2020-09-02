@@ -1,14 +1,14 @@
 <?php require('partials/head.php'); ?>
 
 <?php
-$user = $_SESSION['user']; 
+$user = $_SESSION['user'];
 
-$softSkills = array_filter($skills, function($skill){
-    return $skill->type == "SOFT";
+$softSkills = array_filter($skills, function ($skill) {
+  return $skill->type == "SOFT";
 });
 
-$hardSkills = array_filter($skills, function($skill){
-    return $skill->type == "HARD";
+$hardSkills = array_filter($skills, function ($skill) {
+  return $skill->type == "HARD";
 });
 
 ?>
@@ -16,7 +16,7 @@ $hardSkills = array_filter($skills, function($skill){
 <h1 class="display-4 text-primary">Dashboard</h1>
 <hr class="my-4">
 <h1 class="mb-3">Skills Form</h1>
-<form class="border rounded p-3 p-md-5 ">
+<form class="border rounded p-3 p-md-5  bg-white mb-5">
   <div class="form-group mb-3">
     <label for="week">Săptămâna</label>
     <select class="form-control" name="week" required>
@@ -31,24 +31,24 @@ $hardSkills = array_filter($skills, function($skill){
   <hr>
   <h3 class="mb-3">Soft Skills</h3>
   <div class="form-row mb-3">
-    <?php foreach($softSkills as $skill): ?>
+    <?php foreach ($softSkills as $skill) : ?>
       <div class="form-group col-md-3">
-          <label for="<?= $skill->name; ?>">
-              <?= $skill->name; ?>
-          </label>
-          <input type="number" class="form-control" placeholder="10">
+        <label for="<?= $skill->name; ?>">
+          <?= $skill->name; ?>
+        </label>
+        <input type="number" class="form-control" placeholder="10">
       </div>
     <?php endforeach ?>
   </div>
   <hr>
   <h3 class="mb-3">Hard Skills</h3>
   <div class="form-row mb-3">
-    <?php foreach($hardSkills as $skill): ?>
+    <?php foreach ($hardSkills as $skill) : ?>
       <div class="form-group col-md-3">
-          <label for="<?= $skill->name; ?>">
-              <?= $skill->name; ?>
-          </label>
-          <input type="number" class="form-control" placeholder="10">
+        <label for="<?= $skill->name; ?>">
+          <?= $skill->name; ?>
+        </label>
+        <input type="number" class="form-control" placeholder="10">
       </div>
     <?php endforeach ?>
   </div>
