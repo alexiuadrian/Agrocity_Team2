@@ -28,6 +28,8 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_OBJ);
     }
 
+
+
     public function insert($table, $parameters)
     {
         $sql = sprintf(
@@ -39,10 +41,9 @@ class QueryBuilder
 
         try {
             $statement = $this->pdo->prepare($sql);
-
             $statement->execute($parameters);
         } catch (PDOException $e) {
-            die('Whoops, something went wrong.');
+            die($e->getMessage());
         }
     }
 }

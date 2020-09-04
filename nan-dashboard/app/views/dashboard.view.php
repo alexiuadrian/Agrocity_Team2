@@ -16,16 +16,17 @@ $hardSkills = array_filter($skills, function ($skill) {
 <h1 class="display-4 text-primary">Dashboard</h1>
 <hr class="my-4">
 <h1 class="mb-3">Skills Form</h1>
-<form class="border rounded p-3 p-md-5  bg-white mb-5">
+
+<form class="border rounded p-3 p-md-5  bg-white mb-5" method="POST" action="skills">
   <div class="form-group mb-3">
     <label for="week">Săptămâna</label>
     <select class="form-control" name="week" required>
-      <option>Săptămâna 1</option>
-      <option>Săptămâna 2</option>
-      <option>Săptămâna 3</option>
-      <option>Săptămâna 4</option>
-      <option>Săptămâna 5</option>
-      <option>Săptămâna 6</option>
+      <option value='1'>Săptămâna 1</option>
+      <option value='2'>Săptămâna 2</option>
+      <option value='3'>Săptămâna 3</option>
+      <option value='4'>Săptămâna 4</option>
+      <option value='5'>Săptămâna 5</option>
+      <option value='6'>Săptămâna 6</option>
     </select>
   </div>
   <hr>
@@ -36,7 +37,7 @@ $hardSkills = array_filter($skills, function ($skill) {
         <label for="<?= $skill->name; ?>">
           <?= $skill->name; ?>
         </label>
-        <input type="number" class="form-control" placeholder="10">
+        <input type="number" class="form-control" placeholder="10" name="<?= $skill->id; ?>">
       </div>
     <?php endforeach ?>
   </div>
@@ -48,7 +49,7 @@ $hardSkills = array_filter($skills, function ($skill) {
         <label for="<?= $skill->name; ?>">
           <?= $skill->name; ?>
         </label>
-        <input type="number" class="form-control" placeholder="10">
+        <input type="number" class="form-control" placeholder="10" name="<?= $skill->id ?>">
       </div>
     <?php endforeach ?>
   </div>
