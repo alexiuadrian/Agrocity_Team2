@@ -1,7 +1,6 @@
 <?php require('partials/head.php'); ?>
 
 
-
 <?php
 if (!isset($_SESSION['user'])) : ?>
   <div class="row">

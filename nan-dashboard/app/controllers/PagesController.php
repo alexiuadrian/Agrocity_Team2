@@ -10,18 +10,25 @@ class PagesController
     public function dashboard()
     {
         $skills = App::get('database')->selectAll('skills');
-        
+
+        if (isset($_GET['week'])) {
+            session_start();
+            $gradesThisWeek = App::get('database')->selectWeeks($_GET['week'], $_SESSION['user']);
+            return view('dashboard', ['skills' => $skills, 'gradesThisWeek' => $gradesThisWeek]);
+        }
+
         return view('dashboard', ['skills' => $skills]);
     }
 
-    public function login() {
+    public function login()
+    {
         $user = $_POST['user'];
         $password = $_POST['password'];
 
         $users = App::get('database')->selectUsers($user);
-        
-        if(count($users) > 0 && $users[0]->username == $user) {
-            if($users[0]->password == $password) {
+
+        if (count($users) > 0 && $users[0]->username == $user) {
+            if ($users[0]->password == $password) {
                 session_start();
                 $_SESSION['user'] = $users[0];
 
@@ -34,7 +41,8 @@ class PagesController
         }
     }
 
-    public function logout() {
+    public function logout()
+    {
         session_start();
         session_destroy();
         return redirect('');

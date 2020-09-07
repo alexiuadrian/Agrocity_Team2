@@ -12,7 +12,6 @@ class SkillsController
 
         $skills = array_slice($_POST, 1, NULL, true);
 
-
         foreach ($skills as $key => $value) {
 
             $parameters = [
@@ -26,5 +25,18 @@ class SkillsController
         }
 
         return redirect('dashboard');
+    }
+
+
+    public function update()
+    {
+        $grades = array_slice($_POST, 1, NULL, true);
+
+
+        foreach ($grades as $key => $value) {
+            App::get('database')->updateGrade($key, $value);
+        }
+
+        return redirect('dashboard?week=' . $_POST["week"]);
     }
 }

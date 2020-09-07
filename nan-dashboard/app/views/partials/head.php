@@ -1,8 +1,12 @@
 <?php
-session_start(); ?>
+
+if (!isset($_SESSION)) session_start();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 
 <head>
     <meta charset="UTF-8">
