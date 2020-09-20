@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+@charset "UTF-8";
 
 @font-face
 {
@@ -37,7 +37,7 @@
 		.fa:before
 		{
 			display:inline-block;
-			font-family: FontAwesome;
+            font-family: FontAwesome, serif;
 			font-size: 1.25em;
 			text-decoration: none;
 			font-style: normal;

@@ -2,9 +2,13 @@
 
 @section('content')
     @foreach($articles as $article)
-    <div>
-        <h3>{{$article->title}}</h3>
-        <p>{{$article->body}}</p>
+    <div class="style1">
+        <a href="{{route('articles.show', $article)}}">
+            <h3 class="first">{{$article->title}}</h3>
+        </a>
+        <p>
+            {{$article->excerpt}}
+        </p>
     </div>
     @endforeach
 @endsection

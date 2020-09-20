@@ -12,9 +12,11 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
@@ -117,13 +119,15 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
       <path value="$PROJECT_DIR$/vendor/sebastian/type" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/laravel/legacy-factories" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/macroable" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
     <hideBySeverity>
       <option value="15" />
       <option value="200" />
+      <option value="300" />
     </hideBySeverity>
   </component>
   <component name="ProjectId" id="1gvHuwo1QS0TL1sjY72lgQbvoBD" />
@@ -135,22 +139,22 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laravel\public" />
+      <recent name="C:\xampp\htdocs\laravel\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laravel\resources" />
       <recent name="C:\xampp\htdocs\laravel\resources\views\articles" />
       <recent name="C:\xampp\htdocs\laravel\public" />
-      <recent name="C:\xampp\htdocs\laravel\resources" />
       <recent name="C:\xampp\htdocs\laravel\resources\css" />
       <recent name="C:\xampp\htdocs\laravel\resources\views" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\laravel\resources" />
-      <recent name="C:\xampp\htdocs\laravel\public" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.welcome.blade.php">
@@ -173,8 +177,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.welcome.blade.php" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="JavaScript Debug.welcome.blade.php" />
       </list>
     </recent_temporary>
   </component>
@@ -202,6 +206,22 @@
       <workItem from="1599735941742" duration="51000" />
       <workItem from="1599736147254" duration="2416000" />
       <workItem from="1599765440463" duration="7788000" />
+      <workItem from="1599913663060" duration="613000" />
+      <workItem from="1599915841175" duration="1420000" />
+      <workItem from="1599922258510" duration="1291000" />
+      <workItem from="1599942464483" duration="1260000" />
+      <workItem from="1600094551537" duration="90000" />
+      <workItem from="1600094663244" duration="14309000" />
+      <workItem from="1600184545437" duration="12263000" />
+      <workItem from="1600244238192" duration="5470000" />
+      <workItem from="1600271888556" duration="295000" />
+      <workItem from="1600346946774" duration="996000" />
+      <workItem from="1600352482452" duration="1234000" />
+      <workItem from="1600411093268" duration="83000" />
+      <workItem from="1600425079994" duration="22035000" />
+      <workItem from="1600510553498" duration="12127000" />
+      <workItem from="1600530441485" duration="12240000" />
+      <workItem from="1600632636147" duration="84000" />
     </task>
     <servers />
   </component>
@@ -217,14 +237,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598997526295" />
+    <state x="743" y="265" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1600192087097">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="743" y="265" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.1920.1040@0.0.1920.1040" timestamp="1600192087097" />
+    <state x="690" y="430" key="ComposerInitDialogKey" timestamp="1600094995253">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="430" key="ComposerInitDialogKey/0.0.1920.1040@0.0.1920.1040" timestamp="1600094995253" />
+    <state x="789" y="419" key="ComposerValidateDialog" timestamp="1600095048400">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="789" y="419" key="ComposerValidateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600095048400" />
     <state x="633" y="377" key="EditFileWatcherDialog" timestamp="1599773070395">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="633" y="377" key="EditFileWatcherDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599773070395" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1599130104274">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1600456721826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599130104274" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600456721826" />
     <state width="1879" height="191" key="GridCell.Tab.0.bottom" timestamp="1599511768526">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -241,17 +273,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="191" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599511768526" />
-    <state x="540" y="246" width="938" height="708" key="SettingsEditor" timestamp="1599773073603">
+    <state x="745" y="228" key="NewPhpClassDialog" timestamp="1600428112847">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="246" width="938" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599773073603" />
+    <state x="745" y="228" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600428112847" />
+    <state x="762" y="453" key="ReplaceDuplicatesPrompt" timestamp="1600192094396">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="762" y="453" key="ReplaceDuplicatesPrompt/0.0.1920.1040@0.0.1920.1040" timestamp="1600192094396" />
+    <state x="540" y="246" width="938" height="708" key="SettingsEditor" timestamp="1600513834821">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="246" width="938" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1600513834821" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1598997135950">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598997135950" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599771539875">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600540912287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599771539875" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600540912287" />
   </component>
 </project>

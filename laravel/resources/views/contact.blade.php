@@ -1,5 +1,5 @@
-@extends('layout');
+@extends('layout')
 
-@section('content');
+@section('content')
     <h1>Hi from contact page!</h1>
-@endsection;
+@endsection

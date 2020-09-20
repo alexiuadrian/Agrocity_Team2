@@ -8,7 +8,9 @@
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
     <link href="/css/fonts.css" rel="stylesheet" type="text/css"  />
     <link href="/css/style.css" rel="stylesheet" type="text/css"  />
-    <link rel = "stylesheet" href="{{mix('css/app.css')}}">
+{{--    <link rel = "stylesheet" href="{{asset('/css/style.css')}}">
+    <link rel = "stylesheet" href="{{asset('/css/fonts.css')}}">--}}
+
 </head>
 <body>
 <div id="header-wrapper">

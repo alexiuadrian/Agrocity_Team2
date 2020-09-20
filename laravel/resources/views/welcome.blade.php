@@ -1,5 +1,5 @@
-@extends ('layout');
-@section('header');
+@extends ('layout')
+@section('header')
     <div id="header-featured">
         <div id="banner-wrapper">
             <div id="banner" class="container">
@@ -8,11 +8,10 @@
                 <a href="#" class="button">Etiam posuere</a> </div>
         </div>
     </div>
-</div>
-@endsection;
+@endsection
 
-@section('footer');
+@section('footer')
 <div id="copyright" class="container">
     <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
 </div>
-@endsection;
+@endsection
